@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'EA-Sport';
+    src: url('font/EA Sports.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('font/Poppins-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+header {
+	background: #0a4cba;
+	position: sticky;
+	top: -70px;
+}
+
+header, header div, nav{
+	width: 100%;
+}
+
+#research {
+	padding: 15px 0;
+	display: flex;
+	width: 700px;
+	margin: auto;
+    height: 50px;
+}
+
+#research a {
+    position: relative;
+	text-decoration: none;
+	color: white;
+	font-family: 'poppins';
+	font-size: 30px;
+	margin: auto 0;
+    justify-content: center;
+	margin-left: -2.5%;
+	margin-right: 5%;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+}
+
+#research input[type="text"] {
+	border: none;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 5px 20px;
+    height: 35px;
+	width: 600px;
+    margin: auto;
+}
+
+#research input[type="image"] {
+	border: none;
+	width: 50px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	background: white;
+    height: 45px;
+    margin: auto;
+}
+
+nav {
+	padding: 0;
+	display: flex;
+	background: white;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+nav a {
+	text-decoration: none;
+	font-family: 'poppins';
+	font-size: 16px;
+	color: #0a4cba;
+	margin: 0;
+	padding: 10px 15px;
+	transition: 0.15s;
+}
+
+nav a:hover {
+	background: #0a4cba;
+	color: white;
+}
+
+nav li {
+	list-style: none;
+}
