@@ -35,6 +35,16 @@ label, p, span{
     text-align: center;
 }
 
+p {
+    margin-top: -2px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span {
+    margin-top: 10px;
+}
+
 .checkbox_filtres {
     display: flex;
     flex-direction: row;
@@ -45,4 +55,38 @@ label, p, span{
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.range_css{
+    -webkit-appearance: none;
+    width: 150px;
+    height: 7px;
+    background: #FE7700;
+    cursor: ew-resize;
+    border-radius: 1.5rem;
+}
+
+.range_css::-moz-range-thumb {
+    border: 1px solid #ddd;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    box-shadow: 0 0 .125rem #aaa
+}
+
+.range_css::-moz-range-track {
+    border: 3px solid transparent;
+    padding: .5rem;
+    height: 1rem;
+    border-radius: 1.5rem;
+    background: none
+}
+
+.range_css::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid #FE7700;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background: white;
 }
