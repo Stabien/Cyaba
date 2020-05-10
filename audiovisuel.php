@@ -37,7 +37,7 @@
 		<div class="checkbox_filtres">
 			<p>0</p>
 			<div id="container_position">
-				<input type="range" min="0" max="2999" id="range" name="horns">
+				<input type="range" min="0" max="2999" step="10" id="range" name="horns">
 				<span id="current_value">1499</span>
 			</div>
 			<p>2999</p>
