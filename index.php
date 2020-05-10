@@ -8,10 +8,10 @@
 <body>
 	<?php include('header.php'); ?>
 	<div id="banner">
-		<img src="clavier.jpg">
+		<img src="css/images/clavier.jpg">
 	</div>
 	<div id="promotions">
-		<h1>Nos promotions</h1>
+		
 		<div id="image_promotions"></div>
 	</div>
 </body>

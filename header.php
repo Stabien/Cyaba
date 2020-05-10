@@ -6,7 +6,7 @@
 	<div id="research">
 		<a href="index.php">CYABA</a>
 		<input type="text" placeholder="Rechercher">
-		<input type="image" src="css/loupe.png">
+		<input type="image" src="css/images/loupe_b.png">
 	</div>
 	<nav>
 		<ul>
