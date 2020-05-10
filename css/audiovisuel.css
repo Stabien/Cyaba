@@ -20,13 +20,14 @@
 }
 
 #filtres {
+    margin-top: 100px;
     margin-left: 20px;
     font-family: 'poppins-light';
 }
 
 h5 {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 label, p, span{
