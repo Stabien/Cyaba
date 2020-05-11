@@ -8,11 +8,11 @@
 		<input type="text" placeholder="Rechercher">
 		<input type="image" src="css/images/loupe_b.png">
 		<div class="template_icone">
-			<img id="connexion" src="css/images/account.png">
+			<img id="connexion" src="css/images/account_color.png">
 			<a href="#" class="right_header">Se connecter</a>
 		</div>
 		<div class="template_icone">
-			<img id="panier" src="css/images/panier.png">
+			<img id="panier" src="css/images/panier_color.png">
 			<a href="#" class="right_header">Panier</a>
 		</div>
 	</div>

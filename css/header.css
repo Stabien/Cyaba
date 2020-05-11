@@ -65,7 +65,7 @@ header, header div, nav{
 	background: #FE7700;
     height: 45px;
     margin: auto;
-    margin-right: 100px;
+    margin-right: 70px;
 }
 
 #title {
@@ -88,7 +88,7 @@ header, header div, nav{
     text-align: center;
     margin-left: 50px;
     margin-right: -80px;
-    margin-top: -5px;
+    margin-top: -10px;
 }
 
 .right_header {
@@ -96,18 +96,18 @@ header, header div, nav{
     text-decoration: none;
     font-family: 'poppins';
     font-size: 14px;
-    color: #FE7700;
+    color: #333333;
 }
 
 #panier {
-    width: 50px;
-    height: 40px;
+    width: 60px;
+    height: 50px;
     align-self: center;
 }
 
 #connexion {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     align-self: center;
 }
 
