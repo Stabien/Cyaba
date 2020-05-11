@@ -8,60 +8,66 @@
 <body>
     <?php include('header.php'); ?>
 	<div id="filtres">
-		<h5>Type de produit</h5>
-		<div class="checkbox_filtres">
-			<input type="checkbox" id="horns" name="horns">
-  			<label for="horns">Accessoires</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="photo">
-  			<label for="photo">Appareil Photo</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="camera">
-  			<label for="camera">Caméra</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" id="horns" name="enceinte">
-  			<label for="enceinte">Enceinte</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="micros">
-  			<label for="horns">Micro</label>
-		</div>
-		<h5>Prix</h5>
-		<div class="checkbox_filtres" id="price">
-			<p>0</p>
-			<div id="container_position">
-				<input type="range" min="0" max="2999" step="10" class="range_css" name="horns">
-				<span id="current_value">1499</span>
+		<div class="filtres_cat_container">
+			<h5>Type de produit</h5>
+			<div class="checkbox_filtres">
+				<input type="checkbox" id="horns" name="horns">
+	  			<label for="horns">Accessoires</label>
 			</div>
-			<p>2999</p>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="photo">
+	  			<label for="photo">Appareil Photo</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="camera">
+	  			<label for="camera">Caméra</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" id="horns" name="enceinte">
+  			<label for="enceinte">Enceinte</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="micros">
+  				<label for="horns">Micro</label>
+			</div>
 		</div>
-		<h5>Marques</h5>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="canon">
-  			<label for="canon">Canon</label>
+		<div class="filtres_cat_container">
+			<h5 id="price_title">Prix &nbsp;(€)</h5>
+			<div class="checkbox_filtres" id="price">
+				<p>0</p>
+				<div id="container_position">
+					<input type="range" min="0" max="2999" step="1" id="range" name="horns">
+					<span id="current_value">1499</span>
+				</div>
+				<p>2999</p>
+			</div>
 		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="harman">
-  			<label for="harman">Harman Kardon</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox"  name="jbl">
-  			<label for="jbl">JBL</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" name="nikon">
-  			<label for="nikon">Nikon</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" id="horns" name="horns">
-  			<label for="horns">Pioneer</label>
-		</div>
-		<div class="checkbox_filtres">
-			<input type="checkbox" id="horns" name="horns">
-  			<label for="horns">Sony</label>
+		<div class="filtres_cat_container">
+			<h5>Marques</h5>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="canon">
+	  			<label for="canon">Canon</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="harman">
+	  			<label for="harman">Harman Kardon</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox"  name="jbl">
+	  			<label for="jbl">JBL</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="nikon">
+	  			<label for="nikon">Nikon</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" id="horns" name="horns">
+	  			<label for="horns">Pioneer</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" id="horns" name="horns">
+	  			<label for="horns">Sony</label>
+			</div>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

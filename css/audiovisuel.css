@@ -21,8 +21,10 @@
 
 #filtres {
     margin-top: 100px;
-    margin-left: 20px;
+    padding-left: 20px;
     font-family: 'poppins-light';
+    width: 250px;
+    margin-bottom: 20px;
 }
 
 h5 {
@@ -36,7 +38,7 @@ label, p, span{
 }
 
 p {
-    margin-top: -2px;
+    margin-top: -4px;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -57,16 +59,16 @@ span {
     text-align: center;
 }
 
-.range_css{
+#range {
     -webkit-appearance: none;
     width: 150px;
-    height: 7px;
+    height: 5px;
     background: #FE7700;
     cursor: ew-resize;
     border-radius: 1.5rem;
 }
 
-.range_css::-moz-range-thumb {
+#range::-moz-range-thumb {
     border: 1px solid #ddd;
     width: 1.4rem;
     height: 1.4rem;
@@ -74,7 +76,7 @@ span {
     box-shadow: 0 0 .125rem #aaa
 }
 
-.range_css::-moz-range-track {
+#range::-moz-range-track {
     border: 3px solid transparent;
     padding: .5rem;
     height: 1rem;
@@ -82,11 +84,30 @@ span {
     background: none
 }
 
-.range_css::-webkit-slider-thumb {
+#range::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: 2px solid #FE7700;
     width: 1.7rem;
     height: 1.7rem;
     border-radius: 50%;
     background: white;
+}
+
+.filtres_cat_container {
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.filtres_cat_container h5 {
+    border-top: 3px solid #BBBBBB;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+#price_title {
+    margin-bottom: 20px;
 }

@@ -4,9 +4,17 @@
 
 <header>
 	<div id="research">
-		<a href="index.php">CYABA</a>
+		<a id="title" href="index.php">CYABA</a>
 		<input type="text" placeholder="Rechercher">
 		<input type="image" src="css/images/loupe_b.png">
+		<div class="template_icone">
+			<img id="connexion" src="css/images/account.png">
+			<a href="#" class="right_header">Se connecter</a>
+		</div>
+		<div class="template_icone">
+			<img id="panier" src="css/images/panier.png">
+			<a href="#" class="right_header">Panier</a>
+		</div>
 	</div>
 	<nav>
 		<ul>
@@ -16,8 +24,6 @@
 			<a href="informatique.php"><li>Informatique</li></a>
 			<a href="objets_connectes.php"><li>Objets connectés</li></a>
 			<a href="#"><li>Nous contacter</li></a>
-			<a href="#"><li>Connexion</li></a>
-			<a href="#"><li>Inscription</li></a>
 		</ul>
 	</nav>
 </header>
