@@ -27,9 +27,21 @@
     margin-bottom: 20px;
 }
 
+h2 {
+    background: #CCCCCC;
+    color: white;
+    padding: 7px;
+    padding-bottom: 3px;
+    margin-bottom: 0;
+}
+
 h5 {
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+h5:first-of-type {
+    margin-top: 20px;
 }
 
 label, p, span{
@@ -100,10 +112,10 @@ span {
 }
 
 .filtres_cat_container h5 {
-    border-top: 3px solid #BBBBBB;
+    border-top: 1px solid #BBBBBB;
     padding-top: 7px;
     padding-bottom: 7px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 0;
     vertical-align: middle;
 }

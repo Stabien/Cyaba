@@ -11,7 +11,6 @@
 		<img src="css/images/clavier.jpg">
 	</div>
 	<div id="promotions">
-		
 		<div id="image_promotions"></div>
 	</div>
 </body>

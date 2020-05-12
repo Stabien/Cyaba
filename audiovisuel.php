@@ -8,6 +8,7 @@
 <body>
     <?php include('header.php'); ?>
 	<div id="filtres">
+		<h2>Filtrer</h2>
 		<div class="filtres_cat_container">
 			<h5>Type de produit</h5>
 			<div class="checkbox_filtres">
@@ -36,7 +37,7 @@
 			<div class="checkbox_filtres" id="price">
 				<p>0</p>
 				<div id="container_position">
-					<input type="range" min="0" max="2999" step="1" id="range" name="horns">
+					<input type="range" min="0" max="2999" step="1" id="range">
 					<span id="current_value">1499</span>
 				</div>
 				<p>2999</p>
