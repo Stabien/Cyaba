@@ -65,7 +65,7 @@ header, header div, nav{
 	background: #FE7700;
     height: 45px;
     margin: auto;
-    margin-right: 10%;
+    margin-right: 15%;
 }
 
 #title {
@@ -86,8 +86,8 @@ header, header div, nav{
     text-align: center;
     margin: auto;
     margin-top: -5px;
-    margin-left: 20px;
-    margin-right: 30px;
+    margin-left: 10px;
+    margin-right: 10px
 }
 
 .right_header {

@@ -12,10 +12,6 @@
 		<div class="filtres_cat_container">
 			<h5>Type de produit</h5>
 			<div class="checkbox_filtres">
-				<input type="checkbox" id="horns" name="horns">
-	  			<label for="horns">Accessoires</label>
-			</div>
-			<div class="checkbox_filtres">
 				<input type="checkbox" name="photo">
 	  			<label for="photo">Appareil Photo</label>
 			</div>
@@ -28,8 +24,12 @@
   			<label for="enceinte">Enceinte</label>
 			</div>
 			<div class="checkbox_filtres">
-				<input type="checkbox" name="micros">
-  				<label for="horns">Micro</label>
+				<input type="checkbox" name="microphone">
+  				<label for="microphone">Microphone</label>
+			</div>
+			<div class="checkbox_filtres">
+				<input type="checkbox" name="tele">
+  				<label for="tele">Télévision</label>
 			</div>
 		</div>
 		<div class="filtres_cat_container">
