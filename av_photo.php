@@ -1,6 +1,7 @@
 <?php
 require_once('bdd_connexion.php');
 require_once('filtres.php');
+require_once('get_produits.php')
 ?>
 
 <!DOCTYPE html>
@@ -12,25 +13,24 @@ require_once('filtres.php');
 </head>
 <body>
     <?php include('header.php'); ?>
-	<div id="filtres">
-		<h2>Filtrer</h2>
-		<div class="filtres_cat_container">
-			<h5>Type de produit</h5>
-			<?php
-			filtres_attribut('Photo', $bdd);
-			?>
+	<div id="global_container">
+		<div id="filtres">
+			<h2>Filtrer</h2>
+			<div class="filtres_cat_container">
+				<h5>Type de produit</h5>
+				<?php filtres_attribut('Photo', $bdd); ?>
+			</div>
+			<div class="filtres_cat_container">
+				<h5 id="price_title">Prix &nbsp;(€)</h5>
+				<?php filtres_prix('Photo', $bdd); ?>
+			</div>
+			<div class="filtres_cat_container">
+				<h5>Marques</h5>
+				<?php filtres_marque('Photo', $bdd); ?>
+			</div>
 		</div>
-		<div class="filtres_cat_container">
-			<h5 id="price_title">Prix &nbsp;(€)</h5>
-			<?php
-			filtres_prix('Photo', $bdd);
-			?>
-		</div>
-		<div class="filtres_cat_container">
-			<h5>Marques</h5>
-			<?php
-			filtres_marque('Photo', $bdd);
-			?>
+		<div id="produits_container">
+			<?php get_produits('Photo', $bdd); ?>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

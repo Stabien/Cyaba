@@ -21,10 +21,15 @@
 
 #filtres {
     margin-top: 100px;
-    padding-left: 20px;
+    padding-left: 2%;
     font-family: 'poppins-light';
     width: 250px;
-    margin-bottom: 20px;
+}
+
+#global_container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10%;
 }
 
 h2 {
@@ -33,6 +38,7 @@ h2 {
     padding: 7px;
     padding-bottom: 3px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 h5 {
@@ -122,4 +128,81 @@ span {
 
 #price_title {
     margin-bottom: 20px;
+}
+
+#produits_container {
+    width: 50%;
+    height: 5%;
+    margin-top: 100px;
+    margin-left: 14%;
+}
+
+#produits {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #AAAAAA;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#produits div {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'poppins';
+}
+
+#photo_produit {
+    width: 140px;
+    height: 140px;
+    display: block;
+}
+
+#name_container {
+    flex: 1;
+}
+
+#name_container a:hover {
+    text-decoration: underline;
+}
+
+#name_container a {
+    margin-top: -25px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+#name_container p {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: grey;
+    font-size: 14px;
+}
+
+#right_infos {
+    text-align: center;
+    flex: 1;
+}
+
+#right_infos p {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: right;
+}
+
+#right_infos a {
+    border-radius: 10px;
+    background: #00C7FF;
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    width: 140px;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: auto;
+    margin-right: 0;
 }
