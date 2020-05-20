@@ -14,7 +14,7 @@ require_once('get_produits.php')
 <body>
     <?php include('header.php'); ?>
 	<div id="global_container">
-		<div id="filtres">
+		<form id="filtres" method="POST" action="">
 			<h2>Filtrer</h2>
 			<div class="filtres_cat_container">
 				<h5>Type de produit</h5>
@@ -28,12 +28,45 @@ require_once('get_produits.php')
 				<h5>Marques</h5>
 				<?php filtres_marque('Photo', $bdd); ?>
 			</div>
-		</div>
+		</form>
 		<div id="produits_container">
-			<?php get_produits('Photo', $bdd); ?>
+			<?php
+				if(isset($_POST['marque']))
+					get_produits('Photo', $bdd);
+			?>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/display_range.js"></script>
+	<script>
+	function sendData() {
+		var all_marque = $('.marque');
+		var all_attribut = $('.attribut');
+		var prix = $('#range').val();
+		var marque = [];
+		var attribut = [];
+
+		for (i = 0; i < $('.marque').length; i++) {
+			if (all_marque[i].checked)
+				marque.push(all_marque[i].value);
+		}
+		for (i = 0; i < $('.attribut').length; i++) {
+			if (all_attribut[i].checked)
+			attribut.push(all_attribut[i].value);
+		}
+
+		$.get(
+			'av_photo.php',
+		 	{
+				marque: marque,
+				attribut: attribut,
+				prix: prix
+			}
+		);
+		console.log(marque);
+		console.log(attribut);
+		console.log(prix);
+	}
+	</script>
 </body>
 </html>

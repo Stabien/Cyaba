@@ -29,7 +29,7 @@ body {
 header {
 	background: white;
 	position: sticky;
-	top: -70px;
+    top: -80px;
 }
 
 header, header div, nav{
