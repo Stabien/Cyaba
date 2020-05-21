@@ -11,13 +11,15 @@ function filtres_marque($categorie, $bdd) {
     }
 
     $marque_sort = array_unique($marque);
+    $counter = 0;
 
     for ($i = 0; $i < count($marque); $i++) {
         if (isset($marque_sort[$i])) {
             echo '<div class="checkbox_filtres">
-                <input type="checkbox" class="marque" value="' . $marque_sort[$i] . '" onchange="sendData()">
+                <input type="checkbox" name="marque[' . $counter . ']" "class="marque" value="' . $marque_sort[$i] . '" onchange="$(\'#filtres\').submit()" unchecked>
                 <label for="' . $marque_sort[$i] . '">' . $marque_sort[$i] . '</label>
                 </div>';
+            $counter++;
         }
     }
 }
@@ -38,7 +40,7 @@ function filtres_prix ($categorie, $bdd) {
     echo '<div class="checkbox_filtres" id="price">
              <p>' . round($prix[0] - 0.5 , 0) . '</p>
              <div id="container_position">
-                 <input type="range" min="'. round($prix[0] - 0.5, 0) . '" max="' . round($prix[count($prix) - 1] + 0.5, 0) . '" step="1" id="range" onchange="sendData()">
+                 <input type="range" min="'. round($prix[0] - 0.5, 0) . '" max="' . round($prix[count($prix) - 1] + 0.5, 0) . '" step="1" id="range" name="prix" onchange="$(\'#filtres\').submit()">
                  <span id="current_value">'. round(($prix[count($prix) - 1] + $prix[0]) / 2, 0) . '</span>
              </div>
              <p>' . round($prix[count($prix) - 1] + 0.5 , 0) . '</p>
@@ -57,13 +59,15 @@ function filtres_attribut($categorie, $bdd) {
     }
 
     $attribut_sort = array_unique($attribut);
+    $counter = 0;
 
     for ($i = 0; $i < count($attribut); $i++) {
         if (isset($attribut_sort[$i])) {
             echo '<div class="checkbox_filtres">
-                <input type="checkbox" class="attribut" name="attribut[' . $i . ']" value="' . $attribut_sort[$i] . '" onchange="sendData()">
+                <input type="checkbox" class="attribut" name="attribut[' . $counter . '] " value="' . $attribut_sort[$i] . '" onchange="$(\'#filtres\').submit()">
                 <label for="' . $attribut_sort[$i] . '">' . $attribut_sort[$i] . '</label>
                 </div>';
+            $counter++;
         }
     }
 }
