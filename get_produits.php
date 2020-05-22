@@ -58,25 +58,27 @@ function get_produits($categorie, $bdd, $post) {
         }
     }
     else if (isset($post["attribut"]) && isset($post["marque"])) {
-        for ($i = 0; $i < $nb_attribut["total"]; $i++) {
-            if (isset($post["attribut"][$i])) {
-                $get_line = $bdd->prepare('SELECT * FROM produits WHERE categorie = ? AND attribut = ? AND prix <= ?');
-                $get_line->execute(array($categorie, $post["marque"][$i], $post["prix"]));
-                while ($data = $get_line->fetch()) {
-                    echo '
-                    <div id="produits">
-                        <div href="#" id="img_container">
-                            <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
-                        </div>
-                        <div id="name_container">
-                            <a href="#">' . $data["nom"] .'</a>
-                            <p>En stock</p>
-                        </div>
-                        <div id="right_infos">
-                            <p>' . $data["prix"] . ' €</p>
-                            <a href="#">Ajouter au panier</a>
-                        </div>
-                    </div>';
+        for ($j = 0; $j < $nb_marque["total"]; $j++) {
+            for ($i = 0; $i < $nb_attribut["total"]; $i++) {
+                if (isset($post["attribut"][$i], $post["marque"][$j])) {
+                    $get_line = $bdd->prepare('SELECT * FROM produits WHERE categorie = ? AND attribut = ? AND marque = ? AND prix <= ?');
+                    $get_line->execute(array($categorie, $post["attribut"][$i], $post["marque"][$j], $post["prix"]));
+                    while ($data = $get_line->fetch()) {
+                        echo '
+                        <div id="produits">
+                            <div href="#" id="img_container">
+                                <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
+                            </div>
+                            <div id="name_container">
+                                <a href="#">' . $data["nom"] .'</a>
+                                <p>En stock</p>
+                            </div>
+                            <div id="right_infos">
+                                <p>' . $data["prix"] . ' €</p>
+                                <a href="#">Ajouter au panier</a>
+                            </div>
+                        </div>';
+                    }
                 }
             }
         }
@@ -90,7 +92,6 @@ function get_produits($categorie, $bdd, $post) {
             $get_line = $bdd->prepare('SELECT * FROM produits WHERE categorie = ?');
             $get_line->execute(array($categorie));
         }
-
         while ($data = $get_line->fetch()) {
             echo '
             <div id="produits">
