@@ -43,16 +43,28 @@ function filtres_prix ($categorie, $bdd, $post) {
     }
 
     sort($prix);
-
-    echo '<div class="checkbox_filtres" id="price">
-             <p>' . round($prix[0] + 0.5 , 0) . '</p>
-             <div id="container_position">
-                 <input type="range" min="'. round($prix[0] + 0.5, 0) . '" max="' . round($prix[count($prix) - 1] + 0.5, 0) . '" step="1" id="range" name="prix" value="'
-                 . round($prix[count($prix) - 1] + 0.5, 0) . '"onchange="$(\'#filtres\').submit()">
-                 <span id="current_value">'. round($prix[count($prix) - 1] + 0.5, 0) . '</span>
-             </div>
-             <p>' . round($prix[count($prix) - 1] + 0.5 , 0) . '</p>
-         </div>';
+    if (isset($post["prix"])) {
+        echo '<div class="checkbox_filtres" id="price">
+                 <p>' . round($prix[0] + 0.5 , 0) . '</p>
+                 <div id="container_position">
+                     <input type="range" min="'. round($prix[0] + 0.5, 0) . '" max="' . round($prix[count($prix) - 1] + 0.5, 0) . '" step="1" id="range" name="prix" value="'
+                     . $post["prix"] . '"onchange="$(\'#filtres\').submit()">
+                     <span id="current_value">'. $post["prix"] . '</span>
+                 </div>
+                 <p>' . round($prix[count($prix) - 1] + 0.5 , 0) . '</p>
+             </div>';
+    }
+    else {
+        echo '<div class="checkbox_filtres" id="price">
+                 <p>' . round($prix[0] + 0.5 , 0) . '</p>
+                 <div id="container_position">
+                     <input type="range" min="'. round($prix[0] + 0.5, 0) . '" max="' . round($prix[count($prix) - 1] + 0.5, 0) . '" step="1" id="range" name="prix" value="'
+                     . round($prix[count($prix) - 1] + 0.5, 0) . '"onchange="$(\'#filtres\').submit()">
+                     <span id="current_value">'. round($prix[count($prix) - 1] + 0.5, 0) . '</span>
+                 </div>
+                 <p>' . round($prix[count($prix) - 1] + 0.5 , 0) . '</p>
+             </div>';
+    }
 }
 
 function filtres_attribut($categorie, $bdd, $post) {
