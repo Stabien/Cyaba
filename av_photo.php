@@ -18,22 +18,21 @@ require_once('get_produits.php');
 			<h2>Filtrer</h2>
 			<div class="filtres_cat_container">
 				<h5>Type de produit</h5>
-				<?php filtres_attribut('Photo', $bdd); ?>
+				<?php filtres_attribut('Photo', $bdd, $_POST); ?>
 			</div>
 			<div class="filtres_cat_container">
 				<h5 id="price_title">Prix &nbsp;(€)</h5>
-				<?php filtres_prix('Photo', $bdd); ?>
+				<?php filtres_prix('Photo', $bdd, $_POST); ?>
 			</div>
 			<div class="filtres_cat_container">
 				<h5>Marques</h5>
-				<?php filtres_marque('Photo', $bdd); ?>
+				<?php filtres_marque('Photo', $bdd, $_POST); ?>
 			</div>
 		</form>
 		<div id="produits_container">
 			<?php
 			get_produits('Photo', $bdd, $_POST);
 			?>
-		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/display_range.js"></script>
