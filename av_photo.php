@@ -30,13 +30,9 @@ require_once('get_produits.php');
 			</div>
 		</form>
 		<div id="produits_container">
-			<?php
-			get_produits('Photo', $bdd, $_POST);
-			?>
+			<?php get_produits('Photo', $bdd, $_POST); ?>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/display_range.js"></script>
-	<script>
-	</script>
 </body>
 </html>

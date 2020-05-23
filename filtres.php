@@ -43,6 +43,7 @@ function filtres_prix ($categorie, $bdd, $post) {
     }
 
     sort($prix);
+
     if (isset($post["prix"])) {
         echo '<div class="checkbox_filtres" id="price">
                  <p>' . round($prix[0] + 0.5 , 0) . '</p>

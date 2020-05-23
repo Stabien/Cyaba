@@ -18,19 +18,19 @@ require_once('get_produits.php');
 			<h2>Filtrer</h2>
 			<div class="filtres_cat_container">
 				<h5>Type de produit</h5>
-				<?php filtres_attribut('Camera', $bdd, $_POST); ?>
+				<?php filtres_attribut('Peripherique', $bdd, $_POST); ?>
 			</div>
 			<div class="filtres_cat_container">
 				<h5 id="price_title">Prix &nbsp;(€)</h5>
-				<?php filtres_prix('Camera', $bdd, $_POST); ?>
+				<?php filtres_prix('Peripherique', $bdd, $_POST); ?>
 			</div>
 			<div class="filtres_cat_container">
 				<h5>Marques</h5>
-				<?php filtres_marque('Camera', $bdd, $_POST); ?>
+				<?php filtres_marque('Peripherique', $bdd, $_POST); ?>
 			</div>
 		</form>
 		<div id="produits_container">
-			<?php get_produits('Camera', $bdd, $_POST); ?>
+			<?php get_produits('Peripherique', $bdd, $_POST); ?>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="js/display_range.js"></script>
