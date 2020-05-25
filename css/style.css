@@ -38,10 +38,52 @@ body {
 	width: 100%;
 }
 
-#promotions h1 {
-	font-size: 28px;
+h2 {
+	font-size: 30px;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 20px;
 	font-family: 'poppins';
 	color: grey;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background: #0e0078;
+    color: white;
+}
+
+.trend_container {
+    margin-top: 30px;
+    padding: 25px;
+    padding-top: 5px;
+}
+
+.photos_produits {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 70%;
+}
+
+.photos_produits img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.photos_produits h3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    font-family: 'poppins';
+    font-size: 14px;
+    color: black;
+}
+
+footer {
+    background: #1c1b24;
+    height: 150px;
+    width: 100%;
 }
