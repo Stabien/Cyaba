@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'EA-Sport';
+    src: url('font/EA Sports.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('font/Poppins-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+#produit {
+    position: relative;
+    margin-top: 10%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-family: 'poppins';
+}
+
+#img_title {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-right: 0px;
+}
+
+#img_title img {
+    width: 200px;
+    height: 200px;
+}
+
+#img_title h2 {
+    font-size: 30px;
+}
+
+#lien {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: 100px;
+    text-align: center;
+    background: #d9eef4;
+    border-radius: 30px;
+    padding: 30px 30px;
+}
+
+#lien a {
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 8px;
+    font-size: 19px;
+}
+
+#lien p {
+    font-size: 35px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+#ajouter {
+    background: #00C7FF;
+}
+
+#buy {
+    background: #FE7700;
+}

@@ -1,6 +1,5 @@
 <?php
 function get_produits($categorie, $bdd, $post) {
-
     $req = $bdd->prepare('SELECT COUNT(DISTINCT marque) AS total FROM produits WHERE categorie = ?');
     $req->execute(array($categorie));
     $nb_marque = $req->fetch();
@@ -18,10 +17,10 @@ function get_produits($categorie, $bdd, $post) {
                     echo '
                     <div id="produits">
                         <div href="#" id="img_container">
-                            <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
+                            <a href="detail.php?id='. $data["id"] .'"><img id="photo_produit" src="' . $data["images"] . '"></a>
                         </div>
                         <div id="name_container">
-                            <a href="#">' . $data["nom"] .'</a>
+                            <a href="detail.php?id='. $data["id"] .'">' . $data["nom"] .'</a>
                             <p>En stock</p>
                         </div>
                         <div id="right_infos">
@@ -42,10 +41,10 @@ function get_produits($categorie, $bdd, $post) {
                     echo '
                     <div id="produits">
                         <div href="#" id="img_container">
-                            <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
+                            <a href="detail.php?id='. $data["id"] .'"><img id="photo_produit" src="' . $data["images"] . '"></a>
                         </div>
                         <div id="name_container">
-                            <a href="#">' . $data["nom"] .'</a>
+                            <a href="detail.php?id='. $data["id"] .'">' . $data["nom"] .'</a>
                             <p>En stock</p>
                         </div>
                         <div id="right_infos">
@@ -67,10 +66,10 @@ function get_produits($categorie, $bdd, $post) {
                         echo '
                         <div id="produits">
                             <div href="#" id="img_container">
-                                <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
+                                <a href="detail.php?id='. $data["id"] .'"><img id="photo_produit" src="' . $data["images"] . '"></a>
                             </div>
                             <div id="name_container">
-                                <a href="#">' . $data["nom"] .'</a>
+                                <a href="detail.php?id='. $data["id"] .'">' . $data["nom"] .'</a>
                                 <p>En stock</p>
                             </div>
                             <div id="right_infos">
@@ -96,10 +95,10 @@ function get_produits($categorie, $bdd, $post) {
             echo '
             <div id="produits">
                 <div href="#" id="img_container">
-                    <a href="#"><img id="photo_produit" src="' . $data["images"] . '"></a>
+                    <a href="detail.php?id='. $data["id"] .'"><img id="photo_produit" src="' . $data["images"] . '"></a>
                 </div>
                 <div id="name_container">
-                    <a href="#">' . $data["nom"] .'</a>
+                    <a href="detail.php?id='. $data["id"] .'">' . $data["nom"] .'</a>
                     <p>En stock</p>
                 </div>
                 <div id="right_infos">

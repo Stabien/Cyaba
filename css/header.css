@@ -115,7 +115,7 @@ header, header div, nav{
 nav {
 	padding: 0;
 	display: flex;
-	background: #FE7700;
+    background: #FE7700;
 }
 
 nav ul {
@@ -124,6 +124,14 @@ nav ul {
 	margin: auto;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
 
 nav a {
@@ -141,6 +149,27 @@ nav a:hover {
 	color: #FE7700;
 }
 
-nav li {
-	list-style: none;
+.mega_menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+
+#menu_av, #menu_info, #menu_oc {
+    height: 0px;
+    overflow: hidden;
+    transition: linear height 0.2s;
+}
+
+.mega_menu ul a {
+    font-size: 12px;
+    color: white;
+}
+
+.mega_menu ul a:hover {
+    color: white;
+    background: #FE7700;
+    text-decoration: underline;
 }
