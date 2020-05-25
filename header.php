@@ -5,7 +5,7 @@
 <header>
 	<form id="research" action="research.php" method="POST">
 		<a id="title" href="index.php">CYABA</a>
-		<input type="text" placeholder="Rechercher">
+		<input type="text" name="keyword" placeholder="Rechercher">
 		<input type="image" src="css/images/loupe_b.png">
 		<div class="template_icone">
 			<a href="#" class="right_header">

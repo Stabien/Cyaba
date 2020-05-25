@@ -1,0 +1,210 @@
+@font-face {
+    font-family: 'EA-Sport';
+    src: url('font/EA Sports.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('font/Poppins-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#filtres {
+    margin-top: 100px;
+    padding-left: 2%;
+    font-family: 'poppins-light';
+    width: 250px;
+}
+
+#global_container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10%;
+}
+
+h2 {
+    background: #CCCCCC;
+    color: white;
+    padding: 7px;
+    padding-bottom: 3px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h5 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+h5:first-of-type {
+    margin-top: 20px;
+}
+
+label, p, span{
+    font-size: 12px;
+    text-align: center;
+}
+
+p {
+    margin-top: -4px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span {
+    margin-top: 10px;
+}
+
+.checkbox_filtres {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+#container_position {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#range {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 5px;
+    background: #FE7700;
+    cursor: ew-resize;
+    border-radius: 1.5rem;
+}
+
+#range::-moz-range-thumb {
+    border: 2px solid #FE7700;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background: white;
+}
+
+#range::-moz-range-track {
+    border: 3px solid transparent;
+    padding: .5rem;
+    height: 1rem;
+    border-radius: 1.5rem;
+    background: none
+}
+
+#range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 2px solid #FE7700;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    background: white;
+}
+
+.filtres_cat_container {
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.filtres_cat_container h5 {
+    border-top: 1px solid #BBBBBB;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+#price_title {
+    margin-bottom: 20px;
+}
+
+#produits_container {
+    width: 50%;
+    height: 5%;
+    margin-top: 100px;
+    margin-left: 14%;
+}
+
+#produits {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #AAAAAA;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+#produits div {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'poppins';
+}
+
+#photo_produit {
+    width: 140px;
+    height: 140px;
+    display: block;
+}
+
+#name_container {
+    flex: 1;
+}
+
+#name_container a:hover {
+    text-decoration: underline;
+}
+
+#name_container a {
+    margin-top: -25px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+#name_container p {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: grey;
+    font-size: 14px;
+}
+
+#right_infos {
+    text-align: center;
+    flex: 1;
+}
+
+#right_infos p {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: right;
+}
+
+#right_infos a {
+    border-radius: 10px;
+    background: #00C7FF;
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    width: 140px;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: auto;
+    margin-right: 0;
+}
