@@ -28,10 +28,46 @@ body {
 
 #banner {
 	background: white;
+    margin-bottom: 30px;
+	overflow: hidden;
 }
 
-#banner img {
-	width: 100%;
+@keyframes swipe {
+    0% {
+        margin-left: 0;
+    }
+    24% {
+        margin-left: 0;
+    }
+    33% {
+        margin-left: -100%;
+    }
+    57% {
+        margin-left: -100%;
+    }
+    66% {
+        margin-left: -200%;
+    }
+    90% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+
+figure {
+	margin: 0;
+	width: 400%;
+	animation: swipe 25s infinite;
+    display: flex;
+    flex-direction: row;
+}
+
+figure img {
+	width: 25%;
+	height: 400px;
+	float: left;
 }
 
 #promotions {
@@ -39,14 +75,14 @@ body {
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 24px;
 	text-align: center;
 	margin-top: 20px;
 	font-family: 'poppins';
 	color: grey;
-    padding: 10px;
+    padding: 5px;
     border-bottom: 1px solid grey;
-    width: 1000px;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 50px;
     background: #0e0078;
@@ -54,9 +90,10 @@ h2 {
 }
 
 .trend_container {
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 25px;
     padding-top: 5px;
+    margin-bottom: -30px;
 }
 
 .photos_produits {
@@ -72,7 +109,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-.photos_produits h3 {
+.photos_produits a {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -80,10 +117,18 @@ h2 {
     font-family: 'poppins';
     font-size: 14px;
     color: black;
+    text-decoration: none;
+}
+
+.photos_produits h5 {
+    font-family: 'poppins-light';
+    color: red;
+    font-size: 14px;
 }
 
 footer {
     background: #1c1b24;
-    height: 150px;
+    height: 50px;
     width: 100%;
+    margin-top: 50px;
 }
