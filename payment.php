@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset = "UTF-8">
-<link rel = "stylesheet" style = "text/css" href = "css/mydeco.css">
+    <meta charset = "UTF-8">
+    <link rel = "stylesheet" style = "text/css" href = "css/mydeco.css">
 </head>
 
 <body>
 <?php
+require_once('bdd_connexion.php');
 session_start();
+
 if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
     include('header.php');
 else
@@ -15,11 +17,18 @@ else
 
 if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
     header('Location: Connexion.php');
+
+if (isset($_POST['submit']) && isset($_GET['id_user'])) {
+    $req = $bdd->prepare('DELETE FROM panier WHERE id_panier = ?');
+    $req->execute(array($_GET['id_user']));
+    header('Location: index.php');
+
+}
 ?>
 
-<form action = "action_page.php" autocomplete = "on">
+<form action="" autocomplete="on" method="POST">
     <fieldset>
-        <legend>Payment</legend>
+        <legend>Paiement</legend>
         <label></label>
         <input class = "Encadrer" type = "radio" name = "tcard"><img src = "css/images/Mastercard_logo.png" alt = "MasterCard" width = "70px">
         <input class = "Encadrer" type = "radio" name = "tcard"><img src = "css/images/Visa2.png" alt = "Visa" width = "70px">
@@ -36,7 +45,7 @@ if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
         <label class = "label">CVV</label>
         <input class = "input" type = "text" class = "CVVtxtbox" name = "cvv"
         placeholder = "123" maxlength = "3" pattern = "[0-9].{2}" required>
-        <input type = "submit" value ="Enregistrer" id = Sub>
+        <input type = "submit" value ="Enregistrer" id = Sub name="submit">
     </fieldset>
 </form>
 

@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'EA-Sport';
+    src: url('font/EA Sports.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-light';
+    src: url('font/Poppins-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#filtres {
+    margin-top: 100px;
+    padding-left: 2%;
+    font-family: 'poppins-light';
+    width: 250px;
+}
+
+#price_title {
+    margin-bottom: 20px;
+}
+
+#produits_container {
+    height: 5%;
+    margin-top: 100px;
+}
+
+#produits {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #AAAAAA;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+#produits div {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'poppins';
+}
+
+#photo_produit {
+    width: 140px;
+    height: 140px;
+    display: block;
+}
+
+#name_container {
+    flex: 1;
+}
+
+#img_container a {
+    cursor: default;
+}
+
+#name_container a {
+    margin-top: -25px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    cursor: default;
+}
+
+#name_container p {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: grey;
+    font-size: 14px;
+}
+
+#right_infos {
+    text-align: center;
+    flex: 0;
+}
+
+#right_infos p {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#right_infos a:first-of-type {
+    background: none;
+    color: red;
+    width: 140px;
+    margin: auto;
+    margin-right: 0;
+    font-size: 13px;
+}
+
+#delete:hover {
+    text-decoration: underline;
+}
+
+#paiement, h3 {
+    align-items: center;
+    text-decoration: none;
+    background: red;
+    color: white;
+    font-family: 'poppins';
+    font-size: 18px;
+    padding: 8px 5px;
+    border-radius: 15px;
+    margin: 50px auto;
+    width: 200px;
+    text-align: center;
+}
+
+h3 {
+    background: none;
+    color: #888888;
+    font-size: 40px;
+    width: auto;
+}

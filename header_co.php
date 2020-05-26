@@ -14,7 +14,7 @@
 			</a>
 		</div>
 		<div class="template_icone">
-			<a href="#" class="right_header">
+			<a href="panier.php" class="right_header">
 				<img id="panier" src="css/images/panier_color.png">
 				Panier
 			</a>

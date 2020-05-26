@@ -1,7 +1,9 @@
 <?php
+session_start();
 require_once('bdd_connexion.php');
 require_once('filtres.php');
 require_once('get_produits.php');
+require_once('add_panier.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,6 @@ require_once('get_produits.php');
 </head>
 <body>
 	<?php
-	session_start();
     if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
         include('header.php');
     else
