@@ -12,7 +12,13 @@ require_once('get_produits.php');
 	<title>CYABA</title>
 </head>
 <body>
-    <?php include('header.php'); ?>
+	<?php
+	session_start();
+    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
+        include('header.php');
+    else
+        include('header_co.php');
+    ?>
 	<div id="global_container">
 		<form id="filtres" method="POST" action="">
 			<h2>Filtrer</h2>

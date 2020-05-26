@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'EA-Sport';
+    src: url('font/EA Sports.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#Encadrer{
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: -35px;
+
+}
+legend{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 30px;
+}
+fieldset{
+    font-family: 'Poppins';
+    border-radius: 15px;
+    width: 400px;
+    height: 450px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-color: rgb(17, 4, 4);
+    border-width: 3px;
+    border-style: solid;
+
+}
+fieldset #para{
+    margin-top: 60px;
+    width: 300px;
+}
+#Encadrer input{
+    border: none;
+    border-bottom: 2px solid;
+    font-size: 20px;
+    border-color: black;
+}
+#Encadrer label{
+    font-size: 20px;
+}
+fieldset #Sub{
+    font-family: 'poppins';
+    font-size: 20px;
+    margin-top: 50px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: #00C7FF;
+    color:white;
+    border: none;
+    transition: 0.25s;
+    border-radius: 15px;
+}
+fieldset #Sub:hover{
+    font-family: 'poppins';
+    font-size: 20px;
+    margin-top: 50px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#Encadrer input:focus{
+    border: none;
+    border-bottom: 2px solid;
+    font-size: 20px;
+    border-color: gold;
+    transition: 0.15s;
+}
+#ins{
+    display: flex;
+    color: red;
+    margin-left: 80px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+#fail_login {
+    color: red;
+    font-family: 'Poppins-light';
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#inscription {
+    margin-top: 80px;
+}

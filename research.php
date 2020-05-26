@@ -18,7 +18,12 @@ if (isset($_POST['keyword']) && strlen($_POST['keyword']) > 0) {
 	<title>CYABA</title>
 </head>
 <body>
-    <?php include('header.php');
+    <?php
+	session_start();
+    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
+        include('header.php');
+    else
+        include('header_co.php');
     if (isset($tmp)) {
         while ($data = $req->fetch()) {
             echo '

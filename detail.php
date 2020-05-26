@@ -16,7 +16,13 @@ if (isset($_GET['id'])) {
 	<title>CYABA</title>
 </head>
 <body>
-    <?php include('header.php'); ?>
+    <?php
+	session_start();
+    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
+        include('header.php');
+    else
+        include('header_co.php');
+    ?>
     <div id="produit">
         <div id="img_title">
             <img src="<?php echo $data['images']; ?>" >
@@ -25,7 +31,7 @@ if (isset($_GET['id'])) {
         <div id="lien">
             <p><?php echo $data['prix']; ?>€</p>
             <a href="#" id="ajouter">Ajouter au panier</a>
-            <a href="#" id="buy">Acheter</a>
+            <a href="payment.php" id="buy">Acheter</a>
         </div>
     </div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

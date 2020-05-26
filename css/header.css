@@ -27,9 +27,11 @@ body {
 }
 
 header {
+    position: relative;
 	background: white;
 	position: sticky;
     top: -80px;
+    z-index: 1000;
 }
 
 header, header div, nav{

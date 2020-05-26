@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Poppins';
+}
+
+#container {
+    margin: 10% 30%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 30px 50px;
+}
+
+#s-container {
+    margin:10px 10px;
+    border: 1px solid cyan;
+    padding: 10px 10px;
+}
+
+div.cards2 {
+    margin: 2% 10%;
+    padding: 0px 10px;
+
+}
+
+.CVVtxtbox {
+    width: 40px;
+}
+
+.resizedTxtbox {
+    width: 150px;
+}
+
+.label {
+    font-size: 20px;
+    display: inline-block;
+}
+
+#Sub {
+    font-family: 'poppins';
+    font-size: 20px;
+    margin-top: 45px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(99, 116, 212);
+    color:white;
+    border: none;
+    transition: 0.25s;
+    border-radius: 15px;
+}
+#Sub:hover {
+    font-family: 'poppins';
+    font-size: 20px;
+    margin-top: 60px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: 50%;
+    transform: translate(-50%);
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+fieldset {
+    font-family: 'Poppins';
+    border-radius: 15px;
+    width: 400px;
+    height: 450px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    border-color: rgb(17, 4, 4);
+    border-width: 3px;
+    border-style: solid;
+
+}
+fieldset #para {
+    margin-top: 60px;
+    width: 300px;
+}
+
+#Encadrer {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 300px;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: -35px;
+    
+}
+.input {
+    border: none;
+    border-bottom: 2px solid;
+    font-size: 20px;
+    border-color: black;
+}
+
+legend {
+    display: flex;
+    background-color: white;
+    color: black;
+    padding: 25px;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 30px;
+}
+
+.input:hover {
+    border: none;
+    border-bottom: 2px solid;
+    font-size: 20px;
+    border-color: gold;
+    transition: 0.15s;
+}

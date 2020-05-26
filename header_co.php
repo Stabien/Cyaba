@@ -8,9 +8,9 @@
 		<input type="text" name="keyword" placeholder="Rechercher">
 		<input type="image" src="css/images/loupe_b.png">
 		<div class="template_icone">
-			<a href="Connexion.php" class="right_header">
+			<a href="#" class="right_header">
 				<img id="connexion" src="css/images/account_color.png">
-				Se connecter
+				Mon compte
 			</a>
 		</div>
 		<div class="template_icone">
@@ -49,6 +49,7 @@
 			</li>
 			<li><a href="#">Nous contacter</a></li>
 			<li><a href="#">A propos</a></li>
+			<li><a href="deconnexion.php">Déconnexion</a></li>
 		</ul>
 	</nav>
 </header>

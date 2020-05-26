@@ -6,14 +6,26 @@
 	<title>CYABA</title>
 </head>
 <body>
-	<?php include('header.php'); ?>
-	<div id="banner">
-		<figure>
-			<img src="css/images/banniere_1.jpg">
-			<img src="css/images/banniere_2.png">
-			<img src="css/images/banniere_3.jpg">
-			<img src="css/images/banniere_1.jpg">
-		</figure>
+	<?php
+	session_start();
+    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
+        include('header.php');
+    else
+        include('header_co.php');
+    ?>
+	<div id="container_banner">
+		<div id="banner">
+			<figure>
+				<img src="css/images/banniere_1.jpg">
+				<img src="css/images/banniere_2.png">
+				<img src="css/images/banniere_3.jpg">
+				<img src="css/images/banniere_1.jpg">
+			</figure>
+		</div>
+		<div id="overlay">
+			<h1>Bienvenue sur CYABA ! </h1>
+			<h2>Découvrez tous nos produits dès maintenant !</h2>
+		</div>
 	</div>
 	<div class="trend_container">
 		<h2>Nos promotions</h2>
@@ -33,8 +45,6 @@
 			<a href="detail.php?id=62"><img src="css/images/oc_maison_enceinte_google_1.jpg">Google Home</a>
 		</div>
 	</div>
-	<footer>
-
-	</footer>
+	<footer></footer>
 </body>
 </html>
