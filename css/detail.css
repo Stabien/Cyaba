@@ -85,3 +85,21 @@ body {
 #buy {
     background: #FE7700;
 }
+
+#miniature img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#miniature img:hover {
+    opacity: 1;
+}
+
+#image_2, #image_3 {
+    display: none;
+}
