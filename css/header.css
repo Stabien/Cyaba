@@ -27,11 +27,11 @@ body {
 }
 
 header {
-    position: relative;
 	background: white;
 	position: sticky;
     top: -80px;
     z-index: 1000;
+    height: 100px;
 }
 
 header, header div, nav{
@@ -115,6 +115,7 @@ header, header div, nav{
 }
 
 nav {
+    position: relative;
 	padding: 0;
 	display: flex;
     background: #FE7700;
@@ -152,11 +153,13 @@ nav a:hover {
 }
 
 .mega_menu ul {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin-left: 0px;
     margin-bottom: 0px;
+    height: 0px;
 }
 
 #menu_av, #menu_info, #menu_oc {
