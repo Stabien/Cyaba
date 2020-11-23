@@ -28,10 +28,7 @@ else if (isset($_GET['id_produit']) && (isset($_SESSION['id']) == false or $_SES
 </head>
 <body>
     <?php
-    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
-        include('header.php');
-    else
-        include('header_co.php');
+		  include('check_session.php');
     ?>
     <div id="produit">
         <div id="img_title">

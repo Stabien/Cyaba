@@ -19,7 +19,11 @@ body {
 	width: 100%;
 }
 
-#Encadrer{
+form {
+    margin-top: 80px;
+}
+
+#Encadrer {
     font-family: 'Poppins';
     display: flex;
     flex-direction: column;
@@ -28,9 +32,9 @@ body {
     margin-left: 50%;
     transform: translate(-50%);
     margin-top: -35px;
-
 }
-legend{
+
+legend {
     display: flex;
     background-color: white;
     color: black;
@@ -39,7 +43,8 @@ legend{
     text-align: center;
     font-size: 30px;
 }
-fieldset{
+
+fieldset {
     font-family: 'Poppins';
     border-radius: 15px;
     width: 400px;
@@ -51,19 +56,23 @@ fieldset{
     border-style: solid;
 
 }
-fieldset #para{
+
+fieldset .para{
     margin-top: 60px;
     width: 300px;
 }
+
 #Encadrer input{
     border: none;
     border-bottom: 2px solid;
     font-size: 20px;
     border-color: black;
 }
+
 #Encadrer label{
     font-size: 20px;
 }
+
 fieldset #Sub{
     font-family: 'poppins';
     font-size: 20px;
@@ -80,6 +89,7 @@ fieldset #Sub{
     transition: 0.25s;
     border-radius: 15px;
 }
+
 fieldset #Sub:hover{
     font-family: 'poppins';
     font-size: 20px;
@@ -95,6 +105,7 @@ fieldset #Sub:hover{
     border: none;
     cursor: pointer;
 }
+
 #Encadrer input:focus{
     border: none;
     border-bottom: 2px solid;
@@ -102,6 +113,7 @@ fieldset #Sub:hover{
     border-color: gold;
     transition: 0.15s;
 }
+
 #ins{
     display: flex;
     color: red;
@@ -109,6 +121,7 @@ fieldset #Sub:hover{
     margin-top: 15px;
     cursor: pointer;
 }
+
 #fail_login {
     color: red;
     font-family: 'Poppins-light';
@@ -116,8 +129,4 @@ fieldset #Sub:hover{
     font-size: 16px;
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-#inscription {
-    margin-top: 80px;
 }

@@ -1,6 +1,6 @@
-function terms() 
+function terms()
 {
-    alert("Vous accepter l'exploitation et la vente de vos donnes personnels envers la Chine.");
+    alert("Vous acceptez l'exploitation et la vente de vos données personnelles envers la Chine.");
 }
 
 function unlock()
@@ -18,5 +18,3 @@ function validation()
         return false;
     }
 }
-
-addEventListener

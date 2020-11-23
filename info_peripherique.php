@@ -15,11 +15,8 @@ require_once('add_panier.php');
 </head>
 <body>
 	<?php
-    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
-        include('header.php');
-    else
-        include('header_co.php');
-    ?>
+		include('check_session.php');
+  ?>
 	<div id="global_container">
 		<form id="filtres" method="POST" action="">
 			<h2>Filtrer</h2>

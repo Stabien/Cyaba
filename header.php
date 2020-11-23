@@ -1,7 +1,6 @@
 <head>
 	<link rel="stylesheet" href="css/header.css"/>
 </head>
-
 <header>
 	<form id="research" action="research.php" method="POST">
 		<a id="title" href="index.php">CYABA</a>

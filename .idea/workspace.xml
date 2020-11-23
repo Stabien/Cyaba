@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a3d1ad9-af2d-4e18-b4c8-6f45f421e2fa" name="Default Changelist" comment="" />
+    <list default="true" id="6a3d1ad9-af2d-4e18-b4c8-6f45f421e2fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Connexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/Inscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/av_camera.php" beforeDir="false" afterPath="$PROJECT_DIR$/av_camera.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/av_enceinte.php" beforeDir="false" afterPath="$PROJECT_DIR$/av_enceinte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/av_photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/av_photo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/Connexion.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/Connexion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/Inscription.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/Inscription.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header_co.php" beforeDir="false" afterPath="$PROJECT_DIR$/header_co.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info_ordinateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/info_ordinateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info_peripherique.php" beforeDir="false" afterPath="$PROJECT_DIR$/info_peripherique.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info_piece.php" beforeDir="false" afterPath="$PROJECT_DIR$/info_piece.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/registration_check_fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/registration_check_fields.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/termsconditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/termsconditions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_maison.php" beforeDir="false" afterPath="$PROJECT_DIR$/oc_maison.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oc_sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/oc_sport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panier.php" beforeDir="false" afterPath="$PROJECT_DIR$/panier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research.php" beforeDir="false" afterPath="$PROJECT_DIR$/research.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +35,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XXcQ54WOI0vRw9fe8Tw8rcgd8O" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,6 +47,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="check_session.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/check_session.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.check_session.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,10 +69,21 @@
       <option name="presentableId" value="Default" />
       <updated>1581195860686</updated>
       <workItem from="1581195861924" duration="382000" />
+      <workItem from="1606088105739" duration="78000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="102" key="#check_session.php" timestamp="1606088158590">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="102" key="#check_session.php/0.0.1536.824@0.0.1536.824" timestamp="1606088158590" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1606088106673">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1606088106673" />
   </component>
 </project>

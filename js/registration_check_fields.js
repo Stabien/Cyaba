@@ -7,7 +7,7 @@ function check_user_infos() {
 		error_msg[2].style.display = 'block';
 		return false;
 	}
-	if (expressionReguliere.test(fields[5].value) === false) {
+	if (expressionReguliere.test(fields[5].value) == false) {
 		error_msg[3].style.display = 'block';
 		return false;
 	}
@@ -17,5 +17,4 @@ function check_user_infos() {
 		return false;
 	}
 	return true;
-
 }

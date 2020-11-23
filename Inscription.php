@@ -11,6 +11,7 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
 }
 ?>
 
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,8 +20,10 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
 </head>
 
 <body>
-	<?php include('header.php'); ?>
-    <form action="" method="post" id="Inscription" onsubmit="return check_user_infos()">
+	<?php
+		include('check_session.php');
+  ?>
+    <form action="" method="post" onsubmit="return check_user_infos()">
         <fieldset>
             <legend>Inscription</legend>
             <div id="Encadrer">

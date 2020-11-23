@@ -5,7 +5,7 @@ if (isset($_POST['keyword']) && strlen($_POST['keyword']) > 0) {
     if (strlen($_POST['keyword']) != 1 or $_POST['keyword'][0] != ' ') {
         $req = $bdd->prepare('SELECT * FROM produits WHERE nom LIKE "%"?"%"');
         $req->execute(array($_POST['keyword']));
-        $tmp = 1;
+        $condition = 1;
     }
 }
 ?>
@@ -18,13 +18,9 @@ if (isset($_POST['keyword']) && strlen($_POST['keyword']) > 0) {
 	<title>CYABA</title>
 </head>
 <body>
-    <?php
-	session_start();
-    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
-        include('header.php');
-    else
-        include('header_co.php');
-    if (isset($tmp)) {
+  <?php
+   include('check_session.php');
+    if (isset($condition)) {
         while ($data = $req->fetch()) {
             echo '
             <div id="produits">

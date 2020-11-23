@@ -7,12 +7,8 @@
 </head>
 <body>
 	<?php
-	session_start();
-    if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
-        include('header.php');
-    else
-        include('header_co.php');
-    ?>
+		include('check_session.php');
+  ?>
 	<div id="container_banner">
 		<div id="banner">
 			<figure>
