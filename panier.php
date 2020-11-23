@@ -3,8 +3,9 @@ require_once('bdd_connexion.php');
 session_start();
 
 if (isset($_SESSION['id'])) {
+    $id = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
     $req = $bdd->prepare('SELECT * FROM panier WHERE id_panier = ?');
-    $req->execute(array($_SESSION['id']));
+    $req->execute(array($id));
 }
 if (isset($_GET['delete'])) {
     $req_delete = $bdd->prepare('DELETE FROM panier WHERE id = ?');
@@ -50,8 +51,10 @@ if (isset($_GET['delete'])) {
     ?>
     </div>
     <?php
-    if(isset($display_button))
-        echo '<a id="paiement" href="payment.php?id_user='. $_SESSION['id'] .'">Payer le panier</a>';
+    if (isset($display_button)) {
+      $id = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
+      echo '<a id="paiement" href="payment.php?id_user='. $id .'">Payer le panier</a>';
+    }
     else {
         echo '<h3>Le panier est vide</h3>';
     }

@@ -25,7 +25,7 @@ function get_produits($categorie, $bdd, $post) {
                         </div>
                         <div id="right_infos">
                             <p>' . $data["prix"] . ' €</p>
-                            <a href="?id=' . $data["id"] .'">Ajouter au panier</a>
+                            <a href="detail.php?id_produit=' . $data["id"] .'">Ajouter au panier</a>
                         </div>
                     </div>';
                 }
@@ -49,7 +49,7 @@ function get_produits($categorie, $bdd, $post) {
                         </div>
                         <div id="right_infos">
                             <p>' . $data["prix"] . ' €</p>
-                            <a href="?id=' . $data["id"] .'">Ajouter au panier</a>
+                            <a href="detail.php?id_produit=' . $data["id"] .'">Ajouter au panier</a>
                         </div>
                     </div>';
                 }
@@ -74,7 +74,7 @@ function get_produits($categorie, $bdd, $post) {
                             </div>
                             <div id="right_infos">
                                 <p>' . $data["prix"] . ' €</p>
-                                <a href="?id=' . $data["id"] .'">Ajouter au panier</a>
+                                <a href="detail.php?id_produit=' . $data["id"] .'">Ajouter au panier</a>
                             </div>
                         </div>';
                     }
@@ -103,7 +103,7 @@ function get_produits($categorie, $bdd, $post) {
                 </div>
                 <div id="right_infos">
                     <p>' . $data["prix"] . ' €</p>
-                    <a href="?id=' . $data["id"] .'">Ajouter au panier</a>
+                    <a href="detail.php?id_produit=' . $data["id"] .'">Ajouter au panier</a>
                 </div>
             </div>';
         }

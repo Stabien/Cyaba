@@ -10,12 +10,13 @@ if (isset($_GET['id']) or isset($_GET['id_produit'])) {
     $data = $req->fetch();
 }
 
-if (isset($_GET['id_produit']) && isset($_SESSION['id']) && $_SESSION['id'] != 0) {
+if (isset($_GET['id_produit']) && isset($_SESSION['id']) && $_SESSION['id'] != null) {
+    $id = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
     $req = $bdd->prepare('INSERT INTO panier (id_panier, id_produit) VALUES (?, ?)');
-    $req->execute(array($_SESSION['id'], $_GET['id_produit']));
+    $req->execute(array($id, $_GET['id_produit']));
     header('Location: index.php');
 }
-else if (isset($_GET['id_produit']) && (isset($_SESSION['id']) == false or $_SESSION['id'] == 0))
+else if (isset($_GET['id_produit']) && (!isset($_SESSION['id']) or $_SESSION['id'] == null))
     header('Location: connexion.php');
 ?>
 
@@ -34,12 +35,10 @@ else if (isset($_GET['id_produit']) && (isset($_SESSION['id']) == false or $_SES
         <div id="img_title">
             <img id="image_1" src="<?php echo $data['images']; ?>" >
             <?php
-            if (isset($data['images_2']) && strlen($data['images_2']) > 0) {
+            if (isset($data['images_2']) && strlen($data['images_2']) > 0)
                 echo '<img id="image_2" src="' . $data["images_2"] . '">';
-            }
-            if (isset($data['images_3']) && strlen($data['images_3']) > 0) {
+            if (isset($data['images_3']) && strlen($data['images_3']) > 0)
                 echo '<img id="image_3" src="' . $data["images_3"] . '">';
-            }
             ?>
             <div id="miniature">
                 <img id="minia_1" src="<?php echo $data['images']; ?>">
@@ -48,7 +47,7 @@ else if (isset($_GET['id_produit']) && (isset($_SESSION['id']) == false or $_SES
                 echo '<img id="minia_2" src="' . $data["images_2"] . '">';
             if (isset($data['images_3']) && strlen($data['images_3']) > 0)
                 echo '<img id="minia_3" src="' . $data["images_3"] . '">';
-                ?>
+            ?>
             </div>
             <h2><?php echo $data['nom']; ?></h2>
         </div>
