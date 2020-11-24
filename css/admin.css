@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form h2 {
+  margin: auto;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+form input {
+  margin: 2px 0;
+  padding: 5px 10px;
+}
+
+form input[type="submit"] {
+  margin-top: 10px;
+  color: white;
+  background: #00C7FF;
+}
+
+.erreur {
+  visibility: hidden;
+}

@@ -11,8 +11,8 @@ require_once('bdd_connexion.php');
 session_start();
 
 include('check_session.php');
-if (isset($_SESSION['id']) == false or $_SESSION['id'] == 0)
-    header('Location: Connexion.php');
+if (isset($_SESSION['id']) == false or $_SESSION['id'] == null)
+    header('Location: connexion.php');
 
 if (isset($_POST['submit']) && isset($_GET['id_user'])) {
     $req = $bdd->prepare('DELETE FROM panier WHERE id_panier = ?');

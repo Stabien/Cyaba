@@ -22,9 +22,7 @@ if (isset($_GET['delete'])) {
 	<title>CYABA</title>
 </head>
 <body>
-    <?php
-      include('check_session.php');
-    ?>
+    <?php include('check_session.php'); ?>
     <div id="produits_container">
     <?php
     if (isset($_SESSION['id'])) {

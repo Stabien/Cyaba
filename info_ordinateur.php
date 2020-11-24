@@ -14,9 +14,7 @@ require_once('add_panier.php');
 	<title>CYABA</title>
 </head>
 <body>
-	<?php
-		include('check_session.php');
-  ?>
+	<?php include('check_session.php'); ?>
 	<div id="global_container">
 		<form id="filtres" method="POST" action="">
 			<h2>Filtrer</h2>
