@@ -21,8 +21,7 @@
 	</form>
 	<nav>
 		<ul>
-			<li><a href="#">Nos meilleures ventes</a></li>
-			<li><a href="#">Nos promotions</a></li>
+			<li><a href="depot_produits.php">Dépôt de produits</a></li>
 			<li class="mega_menu">
 				<a href="#" id="audiovisuel">Audiovisuel</a>
 				<ul id="menu_av">
