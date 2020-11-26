@@ -45,14 +45,14 @@ main {
   border-radius: 5px;
 }
 
-#ajouter {
-  background: green;
+#modifier {
+  background: #007BFF;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-#rejeter {
+#supprimer {
   background: red;
   color: white;
   border: none;
