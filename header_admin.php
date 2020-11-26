@@ -3,50 +3,12 @@
 </head>
 <header>
 	<form id="research" action="research.php" method="POST">
-		<a id="title" href="index.php">CYABA</a>
-		<input type="text" name="keyword" placeholder="Rechercher">
-		<input type="image" src="css/images/loupe_b.png">
-		<div class="template_icone">
-			<a href="#" class="right_header">
-				<img id="connexion" src="css/images/account_color.png">
-				Mon compte
-			</a>
-		</div>
-		<div class="template_icone">
-			<a href="panier.php" class="right_header">
-				<img id="panier" src="css/images/panier_color.png">
-				Panier
-			</a>
-		</div>
+		<h1 id="title-admin">Administration</h1>
 	</form>
 	<nav>
 		<ul>
 			<li><a href="depot_produits.php">Dépôt de produits</a></li>
-			<li class="mega_menu">
-				<a href="#" id="audiovisuel">Audiovisuel</a>
-				<ul id="menu_av">
-					<li><a href="av_photo.php">Appareil photo</a></li>
-					<li><a href="av_camera.php">Caméra</a></li>
-					<li><a href="av_enceinte.php">Enceinte</a></li>
-				</ul>
-			</li>
-			<li class="mega_menu">
-				<a href="#" id="informatique">Informatique</a>
-				<ul id="menu_info">
-					<li><a href="info_ordinateur.php">Ordinateur</a></li>
-					<li><a href="info_peripherique.php">Périphérique</a></li>
-					<li><a href="info_piece.php">Pièce</a></li>
-				</ul>
-			</li>
-			<li class="mega_menu">
-				<a href="#" id="oc">Objets connectés</a>
-				<ul id="menu_oc">
-					<li><a href="oc_maison.php">Maison</a></li>
-					<li><a href="oc_sport.php">Sport</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Nous contacter</a></li>
-			<li><a href="#">A propos</a></li>
+			<li><a href="#">Base de données</a></li>
 			<li><a href="deconnexion.php">Déconnexion</a></li>
 		</ul>
 	</nav>

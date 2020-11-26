@@ -1,11 +1,25 @@
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  margin-top: 60px;
+}
+
 .produit {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 100px;
+  margin: 20px 40px;
   width: fit-content;
   background: #F5F5F5;
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 10px;
 }
 
@@ -23,6 +37,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .submit input {
@@ -31,14 +46,14 @@
   border-radius: 5px;
 }
 
-input[name="accepter"] {
+#ajouter {
   background: green;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-input[name="refuser"] {
+#rejeter {
   background: red;
   color: white;
   border: none;
