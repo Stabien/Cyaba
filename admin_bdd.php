@@ -18,7 +18,7 @@
 
     while ($data = $req->fetch()) {
       echo '
-      <form class="produit" action="admin_submit_bdd.php" method="post">
+      <form class="produit" action="admin_submit_bdd.php" onsubmit="return confirmation()" method="post">
         <label>ID : <input type="text" name="id" value="' . $data['id'] . '"></label>
         <label>Nom : <input type="text" name="nom" value="' . $data['nom'] . '"></label>
         <label>Prix : <input type="text" name="prix" value="' . $data['prix'] . '"></label>
@@ -30,13 +30,21 @@
         <label>Miniature 2 : <input type="text" name="image_2" value="' . $data['images_2'] . '"></label>
         <label>Miniature 3 : <input type="text" name="image_3" value="' . $data['images_3'] . '"></label>
         <div class="submit">
-          <input type="submit" id="modifier" name="submit" value="Modifier">
-          <input type="submit" id="supprimer" name="submit" value="Supprimer">
+          <input type="submit" class="modifier" onclick="buttonName =\'modifier\'" name="submit" value="Modifier">
+          <input type="submit" class="supprimer" onclick="buttonName =\'supprimer\'" name="submit" value="Supprimer">
         </div>
       </form>
       ';
     }
     ?>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      let buttonName;
+      const confirmation = () => {
+        let choice = confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
+        return choice;
+      }
+    </script>
   </body>
 </html>

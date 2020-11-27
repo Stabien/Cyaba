@@ -8,6 +8,7 @@
 	<nav>
 		<ul>
 			<li><a href="depot_produits.php">Dépôt de produits</a></li>
+			<li><a href="ajouter_produit.php">Ajouter un produit</a></li>
 			<li><a href="admin_bdd.php">Base de données</a></li>
 			<li><a href="deconnexion.php">Déconnexion</a></li>
 		</ul>
