@@ -10,9 +10,31 @@
     include('check_session.php');
     include('check_admin.php');
     include('bdd_connexion.php');
+
+    function handleFile($file) {
+      $pathFile = 'css/images/' . basename($file["name"]);
+      if (move_uploaded_file($file["tmp_name"], $pathFile))
+        echo 'file_downloaded';
+      else
+        echo 'error while downloading';
+      return $pathFile;
+    }
+
+    if (isset($_POST['submit']) and $_POST['submit'] == 'Valider') {
+      if (isset($_FILES["image_1"], $_FILES["image_2"], $_FILES["image_3"])) {
+        $image_1 = handleFile($_FILES["image_1"]);
+        $image_2 = handleFile($_FILES["image_2"]);
+        $image_3 = handleFile($_FILES["image_3"]);
+      }
+
+      $req = $bdd->prepare('INSERT INTO produits (nom, prix, rayon, categorie, attribut,
+      marque, images, images_2, images_3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+
+      $req->execute(array($_POST['nom'], $_POST['prix'], $_POST['rayon'], $_POST['categorie'],
+                          $_POST['attribut'], $_POST['marque'], $image_1, $image_2, $image_3));
+    }
     ?>
-    <form class="produit" action="admin_submit_bdd.php" onsubmit="" method="post">
-      <label>ID : <input type="text" name="id" value=""></label>
+    <form enctype="multipart/form-data" class="produit" action="ajouter_produit.php" method="post">
       <label>Nom : <input type="text" name="nom" value=""></label>
       <label>Prix : <input type="text" name="prix" value=""></label>
       <label>Rayon :
@@ -36,15 +58,15 @@
       </label>
       <label>Attribut : <input type="text" name="attribut" value=""></label>
       <label>Marque : <input type="text" name="marque" value=""></label>
-      <label>Miniature 1 : <input type="text" name="image_1" value=""></label>
-      <label>Miniature 2 : <input type="text" name="image_2" value=""></label>
-      <label>Miniature 3 : <input type="text" name="image_3" value=""></label>
+      <label>Miniature 1 : <input type="file" accept="image/png, image/jpeg" name="image_1" value=""></label>
+      <label>Miniature 2 : <input type="file" accept="image/png, image/jpeg" name="image_2" value=""></label>
+      <label>Miniature 3 : <input type="file" accept="image/png, image/jpeg" name="image_3" value=""></label>
       <input type="submit" id="valider" name="submit" value="Valider">
     </form>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
-    const inputWidth = parseInt($('input').eq(0).css('width')) + 8 + 'px';
-    $('select').css('width', inputWidth);
+    $('select').css('width', parseInt($('input').eq(6).css('width')) + 8 + 'px');
+    $('input').css('width', parseInt($('input').eq(6).css('width')));
   </script>
 </html>

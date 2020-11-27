@@ -15,7 +15,7 @@ body {
 }
 
 .produit label {
-  margin: 5px;
+  margin: 7px 5px;
   font-family: sans-serif;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 select {
-  padding: 2px; 
+  padding: 2px;
 }
 
 .submit {
@@ -51,4 +51,13 @@ select {
   width: 50%;
   margin: auto;
   margin-top: 15px;
+}
+
+::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 0 8px;
+  cursor: pointer;
 }
