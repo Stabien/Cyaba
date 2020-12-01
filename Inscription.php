@@ -20,9 +20,7 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
 </head>
 
 <body>
-	<?php
-		include('check_session.php');
-  ?>
+	<?php include('check_session.php'); ?>
     <form action="" method="post" onsubmit="return check_user_infos()">
         <fieldset>
             <legend>Inscription</legend>
@@ -35,19 +33,19 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
                 <input class="input" name="Nom_utilisateur" type="text" placeholder="Nom d'utilisateur" id="para">
                 <p>Please enter a valid username</p>
                 <?php
-				if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
-					if ($check_username->fetch())
-						echo '<span>This username is already taken</span>';
-				}
-				?>
+								if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
+									if ($check_username->fetch())
+										echo '<span>This username is already taken</span>';
+								}
+								?>
                 <input class="input" name="Mail" type="text" placeholder="Email" id="para">
                 <p>Please enter a valid email address</p>
                 <?php
-				if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
-					if ($check_email_address->fetch())
-						echo '<span>This email address is already taken</span>';
-					}
-				?>
+								if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
+									if ($check_email_address->fetch())
+										echo '<span>This email address is already taken</span>';
+									}
+								?>
                 <input class="input" name="Mot_de_passe" type='password' placeholder="Mot de passe" id="para">
                 <p>Please enter a valid password</p>
                 <input class="input" name="conf_mot_de_passe" type='password' placeholder="Confirmer mot de passe" id="para">

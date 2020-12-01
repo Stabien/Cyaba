@@ -10,7 +10,7 @@ if (isset($_POST['username'], $_POST['password'])) {
         $get_id->execute(array(htmlspecialchars($_POST['username']), htmlspecialchars($_POST['password'])));
         session_start();
         $_SESSION['id'] = 'a' . strval($get_id->fetch()[0]);
-        header('Location: index.php');
+        header('Location: admin_bdd.php');
     }
 }
 ?>

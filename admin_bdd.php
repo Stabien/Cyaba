@@ -7,8 +7,8 @@
   </head>
   <body>
     <?php
-    include('check_session.php');
     include('check_admin.php');
+    include('header_admin.php');
     include('bdd_connexion.php');
     ?>
 
@@ -42,7 +42,7 @@
     <script type="text/javascript">
       let buttonName;
       const confirmation = () => {
-        let choice = confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
+        return confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
         return choice;
       }
     </script>

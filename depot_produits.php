@@ -7,8 +7,8 @@
   </head>
   <body>
     <?php
-    include('check_session.php');
     include('check_admin.php');
+    include('header_admin.php');
     include('bdd_connexion.php');
     ?>
 
