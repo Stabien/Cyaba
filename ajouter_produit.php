@@ -54,22 +54,22 @@
       <label>Prix : <input type="text" name="prix" value=""></label>
       <span>Veuillez rentrer un prix valide</span>
       <label>Rayon :
-        <select name="rayon">
+        <select id="select-rayon" name="rayon">
           <option value="Audiovisuel">Audiovisuel</option>
           <option value="Informatique">Informatique</option>
           <option value="Objets connectes">Objets connectés</option>
         </select>
       </label>
       <label>Catégorie :
-        <select name="categorie">
+        <select id="select-categorie" name="categorie">
           <option value="Photo">Appareil Photo</option>
           <option value="Camera">Camera</option>
           <option value="Enceinte">Enceinte</option>
-          <option value="Ordinateur">Ordinateur</option>
-          <option value="Périphérique">Périphérique</option>
-          <option value="Pièce">Pièce</option>
-          <option value="Maison">Maison</option>
-          <option value="Sport">Sport</option>
+          <option value="Ordinateur" style="display: none">Ordinateur</option>
+          <option value="Périphérique" style="display: none">Périphérique</option>
+          <option value="Pièce" style="display: none">Pièce</option>
+          <option value="Maison" style="display: none">Maison</option>
+          <option value="Sport" style="display: none">Sport</option>
         </select>
       </label>
       <label>Attribut : <input type="text" name="attribut" value=""></label>
@@ -88,9 +88,55 @@
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
+    // Define width for all fields
     $('select').css('width', parseInt($('input').eq(6).css('width')) + 8 + 'px');
     $('input').css('width', parseInt($('input').eq(6).css('width')));
 
+    // Change available categorie values depending on rayon value selected
+    $('#select-rayon').on('change', () => {
+      switch ($('#select-rayon option:selected').val()) {
+        case "Audiovisuel":
+          // Reset display for all options
+          for (let i = 0; i < 8; i++) {
+            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
+          }
+          // Displays only options 1, 2 and 3
+          for (let i = 0; i < 3; i++) {
+            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'block');
+          }
+          $('#select-categorie option:eq(0)').prop('selected', 'selected');
+          break;
+        case "Informatique":
+          // Reset display for all options
+          for (let i = 0; i < 8; i++) {
+            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
+          }
+          // Displays only options 4, 5 and 6
+          for (let i = 3; i < 6; i++) {
+            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'block');
+          }
+          $('#select-categorie option:eq(3)').prop('selected', 'selected');
+          break;
+        case "Objets connectes":
+          // Reset display for all options
+          for (let i = 0; i < 8; i++) {
+            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
+          }
+          // Displays only options 7 and 8
+          for (let i = 6; i < 8; i++) {
+            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+            $('#select-categorie option:eq(' + i + ')').css('display', 'block');
+          }
+          $('#select-categorie option:eq(6)').prop('selected', 'selected');
+          break;
+      }
+    });
+    // Check input values before submit
     const checkInput = () => {
       for (let i = 0; i < $('input').length - 1; i++) {
         if ($('input').eq(i).val().length < 2 && i != 1) {
