@@ -14,36 +14,43 @@
 
     $submit = true;
 
-    function handleFile($file) {
-      $pathFile = 'css/images/' . basename($file["name"]);
-      if (move_uploaded_file($file["tmp_name"], $pathFile))
-        echo 'file_downloaded';
+    function handleFile($files) {
+      $pathFile = 'css/images/' . basename($files['name']);
+      $baseName = pathinfo($files['name'], PATHINFO_FILENAME);
+      $extension = pathinfo($files['name'], PATHINFO_EXTENSION);
+      $i = 1;
+      while(file_exists($pathFile)) {
+          $fileName = (string) $baseName . ' (' . $i . ').';
+          $completeFileName = $fileName . $extension;
+          $pathFile = 'css/images/' . basename($completeFileName);
+          $i++;
+      }
+      if (move_uploaded_file($files['tmp_name'], $pathFile))
+        echo $pathFile;
       else
         return false;
       return $pathFile;
     }
 
     if (isset($_POST['submit']) and $_POST['submit'] == 'Valider') {
-      if (isset($_FILES["image_1"], $_FILES["image_2"], $_FILES["image_3"])) {
+      if (isset($_FILES['image_1'], $_FILES['image_2'], $_FILES['image_3'])) {
         // Check if input are corrects
         if (verification($_POST, $_FILES) == false) {
           $submit = false;
           return false;
         }
         // Download files in specific folder
-        $image_1 = handleFile($_FILES["image_1"]);
-        $image_2 = handleFile($_FILES["image_2"]);
-        $image_3 = handleFile($_FILES["image_3"]);
+        $image_1 = handleFile($_FILES['image_1']);
+        $image_2 = handleFile($_FILES['image_2']);
+        $image_3 = handleFile($_FILES['image_3']);
         // Check if file exist and is downloaded
         if ($image_1 == false or $image_2 == false or $image_3 == false) {
           $submit = false;
           return false;
         }
       }
-
       $req = $bdd->prepare('INSERT INTO produits (nom, prix, rayon, categorie, attribut,
       marque, images, images_2, images_3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
-
       $req->execute(array($_POST['nom'], $_POST['prix'], $_POST['rayon'], $_POST['categorie'],
                           $_POST['attribut'], $_POST['marque'], $image_1, $image_2, $image_3));
     }
@@ -94,44 +101,29 @@
 
     // Change available categorie values depending on rayon value selected
     $('#select-rayon').on('change', () => {
+      // Reset display for all options
+      for (let i = 0; i < 8; i++)
+        $('#select-categorie option:eq(' + i + ')').css('display', 'none');
       switch ($('#select-rayon option:selected').val()) {
         case "Audiovisuel":
-          // Reset display for all options
-          for (let i = 0; i < 8; i++) {
-            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
-            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
-          }
           // Displays only options 1, 2 and 3
-          for (let i = 0; i < 3; i++) {
-            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+          for (let i = 0; i < 3; i++)
             $('#select-categorie option:eq(' + i + ')').css('display', 'block');
-          }
+          // Change select to the first element of the categorie chosen
           $('#select-categorie option:eq(0)').prop('selected', 'selected');
           break;
         case "Informatique":
-          // Reset display for all options
-          for (let i = 0; i < 8; i++) {
-            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
-            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
-          }
           // Displays only options 4, 5 and 6
-          for (let i = 3; i < 6; i++) {
-            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+          for (let i = 3; i < 6; i++)
             $('#select-categorie option:eq(' + i + ')').css('display', 'block');
-          }
+          // Change select to the first element of the categorie chosen
           $('#select-categorie option:eq(3)').prop('selected', 'selected');
           break;
         case "Objets connectes":
-          // Reset display for all options
-          for (let i = 0; i < 8; i++) {
-            $('#select-categorie option:eq(' + i + ')').attr('disabled', 'disabled');
-            $('#select-categorie option:eq(' + i + ')').css('display', 'none');
-          }
           // Displays only options 7 and 8
-          for (let i = 6; i < 8; i++) {
-            $('#select-categorie option:eq(' + i + ')').removeAttr('disabled');
+          for (let i = 6; i < 8; i++)
             $('#select-categorie option:eq(' + i + ')').css('display', 'block');
-          }
+          // Change select to the first element of the categorie chosen
           $('#select-categorie option:eq(6)').prop('selected', 'selected');
           break;
       }

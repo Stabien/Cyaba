@@ -9,6 +9,7 @@ function verification($post, $files) {
     ['Ordinateur','Périphérique', 'Pièce'],
     ['Maison', 'Sport']
   ];
+  $imageExtension = ['jpg', 'jpeg', 'png'];
   // Check input length
   if (strlen($post['nom']) < 2 or strlen($post['attribut']) < 2 or strlen($post['marque']) < 2)
     return false;
@@ -33,6 +34,10 @@ function verification($post, $files) {
   if ($files['image_1']['size'] > 10 * $mb or
       $files['image_2']['size'] > 10 * $mb or
       $files['image_3']['size'] > 10 * $mb)
+    return false;
+  if (!in_array(pathinfo($files['image_1']['name'], PATHINFO_EXTENSION), $imageExtension) or
+      !in_array(pathinfo($files['image_2']['name'], PATHINFO_EXTENSION), $imageExtension) or
+      !in_array(pathinfo($files['image_3']['name'], PATHINFO_EXTENSION), $imageExtension))
     return false;
   // if everything is good return true*/
   return true;
