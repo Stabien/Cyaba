@@ -27,9 +27,13 @@ main {
   font-family: sans-serif;
 }
 
-.produit input {
+.produit input, select {
   float: right;
   margin: 0 10px;
+}
+
+select {
+  padding: 2px;
 }
 
 .submit {
@@ -57,4 +61,8 @@ main {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.hiddenFields {
+  display: none;
 }

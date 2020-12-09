@@ -98,7 +98,6 @@
     // Define width for all fields
     $('select').css('width', parseInt($('input').eq(6).css('width')) + 8 + 'px');
     $('input').css('width', parseInt($('input').eq(6).css('width')));
-
     // Change available categorie values depending on rayon value selected
     $('#select-rayon').on('change', () => {
       // Reset display for all options

@@ -11,7 +11,6 @@
     include('header_admin.php');
     include('bdd_connexion.php');
     ?>
-
     <main>
     <?php
     $req = $bdd->query('SELECT * FROM produits');
@@ -22,8 +21,25 @@
         <label>ID : <input type="text" name="id" value="' . $data['id'] . '"></label>
         <label>Nom : <input type="text" name="nom" value="' . $data['nom'] . '"></label>
         <label>Prix : <input type="text" name="prix" value="' . $data['prix'] . '"></label>
-        <label>Rayon : <input type="text" name="rayon" value="' . $data['rayon'] . '"></label>
-        <label>Catégorie : <input type="text" name="categorie" value="' . $data['categorie'] . '"></label>
+        <label>Rayon :
+          <select name="rayon">
+            <option value="Audiovisuel">Audiovisuel</option>
+            <option value="Informatique">Informatique</option>
+            <option value="Objets connectes">Objets connectés</option>
+          </select>
+        </label>
+        <label>Catégorie :
+          <select name="categorie">
+            <option value="Photo">Appareil Photo</option>
+            <option value="Camera">Camera</option>
+            <option value="Enceinte">Enceinte</option>
+            <option value="Ordinateur">Ordinateur</option>
+            <option value="Périphérique">Périphérique</option>
+            <option value="Pièce">Pièce</option>
+            <option value="Maison">Maison</option>
+            <option value="Sport">Sport</option>
+          </select>
+        </label>
         <label>Attribut : <input type="text" name="attribut" value="' . $data['attribut'] . '"></label>
         <label>Marque : <input type="text" name="marque" value="' . $data['marque'] . '"></label>
         <label>Miniature 1 : <input type="text" name="image_1" value="' . $data['images'] . '"></label>
@@ -33,6 +49,8 @@
           <input type="submit" class="modifier" onclick="buttonName =\'modifier\'" name="submit" value="Modifier">
           <input type="submit" class="supprimer" onclick="buttonName =\'supprimer\'" name="submit" value="Supprimer">
         </div>
+        <input type="text" class="hiddenFields rayonValue" value="' . $data['rayon'] . '">
+        <input type="text" class="hiddenFields categorieValue" value="' . $data['categorie'] . '">
       </form>
       ';
     }
@@ -44,6 +62,22 @@
       const confirmation = () => {
         return confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
         return choice;
+      }
+      
+      $('select').css('width', parseInt($('input').eq(6).css('width')) + 8.8 + 'px');
+
+      for (let i = 0; i < $('form').length; i++) {
+        const rayon = $('form').eq(i).find('.rayonValue').val();
+        const categorie = $('form').eq(i).find('.categorieValue').val();
+
+        for (let j = 0; j < 3; j++) {
+          if ($('form').eq(i).find('select[name="rayon"] option:eq(' + j + ')').val() === rayon)
+            $('form').eq(i).find('select[name="rayon"] option:eq(' + j + ')').attr('selected', 'selected');
+        }
+        for (let j = 0; j < 9; j++) {
+          if ($('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').val() === categorie)
+            $('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').prop('selected', 'selected');
+        }
       }
     </script>
   </body>
