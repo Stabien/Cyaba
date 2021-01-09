@@ -1,0 +1,72 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.produit {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: fit-content;
+  background: #F5F5F5;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 100px;
+}
+
+.produit label {
+  margin: 7px 5px;
+  font-family: sans-serif;
+}
+
+.produit input, select {
+  float: right;
+  margin: 0 10px;
+}
+
+select {
+  padding: 2px;
+}
+
+.submit {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.submit input {
+  margin: auto;
+  padding: 10px 18px;
+  border-radius: 5px;
+}
+
+#valider {
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+input[type="file"] {
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+span {
+  margin-left: 116px;
+  width: fit-content;
+  color: red;
+  font-family: sans-serif;
+  font-size: 14px;
+  display: none;
+}

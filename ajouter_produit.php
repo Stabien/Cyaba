@@ -12,8 +12,6 @@
     include('bdd_connexion.php');
     include('form_produit_verification.php');
 
-    $submit = true;
-
     function handleFile($files) {
       $pathFile = 'css/images/' . basename($files['name']);
       $baseName = pathinfo($files['name'], PATHINFO_FILENAME);
@@ -35,19 +33,15 @@
     if (isset($_POST['submit']) and $_POST['submit'] == 'Valider') {
       if (isset($_FILES['image_1'], $_FILES['image_2'], $_FILES['image_3'])) {
         // Check if input are corrects
-        if (verification($_POST, $_FILES) == false) {
-          $submit = false;
+        if (verification($_POST, $_FILES) == false)
           return false;
-        }
         // Download files in specific folder
         $image_1 = handleFile($_FILES['image_1']);
         $image_2 = handleFile($_FILES['image_2']);
         $image_3 = handleFile($_FILES['image_3']);
         // Check if file exist and is downloaded
-        if ($image_1 == false or $image_2 == false or $image_3 == false) {
-          $submit = false;
+        if ($image_1 == false or $image_2 == false or $image_3 == false)
           return false;
-        }
       }
       $req = $bdd->prepare('INSERT INTO produits (nom, prix, rayon, categorie, attribut,
       marque, images, images_2, images_3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
@@ -91,7 +85,6 @@
       <span>Veuillez mettre une image</span>
       <input type="submit" id="valider" name="submit" value="Valider">
     </form>
-    <?php if ($submit == false) echo '<span>erreur</span>'; ?>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
@@ -101,8 +94,9 @@
     // Change available categorie values depending on rayon value selected
     $('#select-rayon').on('change', () => {
       // Reset display for all options
-      for (let i = 0; i < 8; i++)
+      for (let i = 0; i < 8; i++) {
         $('#select-categorie option:eq(' + i + ')').css('display', 'none');
+      }
       switch ($('#select-rayon option:selected').val()) {
         case "Audiovisuel":
           // Displays only options 1, 2 and 3

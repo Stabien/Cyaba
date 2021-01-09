@@ -1,0 +1,209 @@
+@font-face {
+  font-family: 'EA-Sport';
+  src: url('font/EA Sports.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('font/Poppins-medium.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Faire Mon compte avec des traits de chaque côté */
+.hr {
+  font-family: 'Poppins';
+  font-size: x-large;
+  /* centre verticalement les enfants entre eux */
+  align-items: center;
+
+  /* active flexbox */
+  display: flex;
+  margin-top: 4%;
+  /* garde le texte centré s’il passe sur plusieurs lignes ou si flexbox n’est pas supporté */
+  text-align: center;
+  /*position: absolute; left: 50%; transform: translate(-50%);*/
+}
+.hr::before{
+      /* la couleur est volontairement absente ; ainsi elle sera celle du texte */
+      /*border-top: .0625em solid;*/
+      border-top: .0900em solid;
+
+      /* nécessaire pour afficher les pseudo-éléments */
+      content: "";
+
+      /* partage le reste de la largeur disponible */
+      /*flex: 1;*/
+      width: 25%;
+
+      /* espace les traits du texte */
+      margin: 0 .9em;
+      margin-left: 25%;
+}
+.hr::after {
+    /* la couleur est volontairement absente ; ainsi elle sera celle du texte */
+    /*border-top: .0625em solid;*/
+    border-top: .0900em solid;
+
+    /* nécessaire pour afficher les pseudo-éléments */
+    content: "";
+
+    /* partage le reste de la largeur disponible */
+    /*flex: 1;*/
+    width: 25%;
+
+    /* espace les traits du texte */
+    margin: 0 .9em;
+    margin-right: 25%;
+}
+#user_infos {
+  font-family: 'Poppins';
+  width: 30%;
+  margin: auto;
+  margin-top: 3%;
+}
+#nom {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  height: 24px;
+  width: 100%;
+  transition: 0.2s;
+}
+#nom:hover {
+  border-style: solid;
+  border-color: orange;
+}
+#erreur_nom {
+  margin-top: 0%;
+  margin-bottom: auto;
+  margin-left: 3px;
+  display: none;
+  color: red;
+}
+#prenom {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  margin-top: 20px;
+  height: 24px;
+  width: 100%;
+  transition: 0.2s;
+}
+
+#nom_utilisateur {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  height: 24px;  
+  margin-top: 20px;
+  width: 100%;
+  transition: 0.2s;
+}
+
+#prenom:hover {
+  border-style: solid;
+  border-color: orange;
+  border-radius: 4px;
+}
+#erreur_prenom {
+  margin-top: 0%;
+  margin-bottom: auto;
+  margin-left: 3px;
+  display: none;
+  color: red;
+}
+#motdepasse {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  margin-top: 20px;
+  width: 100%;
+  height: 24px;
+  transition: 0.2s;
+}
+#motdepasse:hover {
+  border-style: solid;
+  border-color: orange;
+  border-radius: 4px;
+  margin-top: 20px;
+  height: 24px;
+}
+#erreur_mdp {
+  margin-top: 0%;
+  margin-bottom: auto;
+  margin-left: 3px;
+  display: none;
+  color: red;
+}
+#Conf_motdepasse{
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  margin-top: 20px;
+  width: 100%;
+  height: 24px;
+  transition: 0.2s;
+}
+#Conf_motdepasse:hover {
+  border-style: solid;
+  border-color: orange;
+  border-radius: 4px;
+}
+#erreur_confmdp {
+  margin-top: 0%;
+  margin-left: 3px;
+  display: none;
+  color: red;
+}
+#mail {
+  border-style: solid;
+  border-color: black;
+  margin-top: 20px;
+  height: 24px;
+  border-radius: 3px;
+  width: 100%;
+  transition: 0.2s;
+}
+#mail:hover {
+  border-style: solid;
+  border-color: orange;
+  margin-top: 20px;
+  height: 24px;
+  border-radius: 3px;
+}
+#erreur_mail{
+  margin-top: 0%;
+  margin-bottom: auto;
+  margin-left: 3px;
+  display: none;
+  color: red;
+}
+#submit{
+  border-style: solid;
+  border-color: black;
+  margin-top: 20px;
+  display: flex;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#submit:hover{
+  border-style: solid;
+  border-color: black;
+  margin-top: 20px;
+  display: flex;
+  height: 30px;
+  border-radius: 3px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}

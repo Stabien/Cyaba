@@ -63,7 +63,7 @@
         return confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
         return choice;
       }
-      
+
       $('select').css('width', parseInt($('input').eq(6).css('width')) + 8.8 + 'px');
 
       for (let i = 0; i < $('form').length; i++) {
@@ -74,7 +74,7 @@
           if ($('form').eq(i).find('select[name="rayon"] option:eq(' + j + ')').val() === rayon)
             $('form').eq(i).find('select[name="rayon"] option:eq(' + j + ')').attr('selected', 'selected');
         }
-        for (let j = 0; j < 9; j++) {
+        for (let j = 0; j < 8; j++) {
           if ($('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').val() === categorie)
             $('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').prop('selected', 'selected');
         }

@@ -23,6 +23,8 @@ if (isset($_GET['delete'])) {
 </head>
 <body>
     <?php include('check_session.php'); ?>
+    <?php include('check_user.php'); ?>
+
     <div id="produits_container">
     <?php
     if (isset($_SESSION['id'])) {

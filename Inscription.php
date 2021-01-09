@@ -57,7 +57,7 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
         </fieldset>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="js/placeholder.js"></script>
+		<script src="js/placeholder.js"></script>
     <script src="js/registration_check_fields.js"></script>
 </body>
 

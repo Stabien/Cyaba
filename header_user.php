@@ -7,7 +7,7 @@
 		<input type="text" name="keyword" placeholder="Rechercher">
 		<input type="image" src="css/images/loupe_b.png">
 		<div class="template_icone">
-			<a href="#" class="right_header">
+			<a href="mon_compte.php" class="right_header">
 				<img id="connexion" src="css/images/account_color.png">
 				Mon compte
 			</a>
@@ -21,8 +21,6 @@
 	</form>
 	<nav>
 		<ul>
-			<li><a href="#">Nos meilleures ventes</a></li>
-			<li><a href="#">Nos promotions</a></li>
 			<li class="mega_menu">
 				<a href="#" id="audiovisuel">Audiovisuel</a>
 				<ul id="menu_av">
@@ -46,6 +44,7 @@
 					<li><a href="oc_sport.php">Sport</a></li>
 				</ul>
 			</li>
+			<li><a href="deposer_objet.php">Déposer un objet</a></li>
 			<li><a href="#">Nous contacter</a></li>
 			<li><a href="#">A propos</a></li>
 			<li><a href="deconnexion.php">Déconnexion</a></li>
