@@ -21,7 +21,7 @@ include('check_user.php');
     if (isset($_POST['submit']) && $_POST['submit'] == "Modifier mes informations") {
       $update_infos = $bdd->prepare('UPDATE users SET Nom = ?, Prenom = ?, Mail = ?, Nom_utilisateur = ?, Mot_de_passe = ? WHERE ID = '. $id . '');
       $update_infos->execute(array($_POST['Nom'], $_POST['Prenom'], $_POST['Mail'], $_POST['Nom_utilisateur'], $_POST['Mot_de_passe']));
-      Header('Location: mon_compte.php');
+      header('Location: mon_compte.php');
     }
   ?>
   <h1 class="hr">Mon compte</h1>

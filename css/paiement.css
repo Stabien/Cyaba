@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+#form_paiement {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 30px auto;
+}
+
+#form_paiement h1 {
+  font-family: 'Poppins';
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+#form_paiement label {
+  margin-bottom: 3px;
+}
+
+#form_paiement input {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 7px;
+  border: 1px solid black;
+}
+
+#form_paiement span {
+  background: red;
+  color: white;
+  font-family: 'Poppins';
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#form_paiement input[type="submit"] {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 60%;
+  background: #00C7FF;
+  color: white;
+  border: none;
+  padding: 8px;
+  font-size: 20px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  border-radius: 7px;
+  cursor: pointer;
+}

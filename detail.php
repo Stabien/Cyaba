@@ -54,7 +54,7 @@ else if (isset($_GET['id_produit']) && (!isset($_SESSION['id']) or $_SESSION['id
         <div id="lien">
             <p><?php echo $data['prix']; ?>€</p>
             <a href="?id_produit=<?php echo $data["id"]; ?>" id="ajouter">Ajouter au panier</a>
-            <a href="payment.php" id="buy">Acheter</a>
+            <a href="paiement.php?id_produit=<?php echo $data["id"]; ?>" id="buy">Acheter</a>
         </div>
     </div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

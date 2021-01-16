@@ -53,7 +53,7 @@ if (isset($_GET['delete'])) {
     <?php
     if (isset($display_button)) {
       $id = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
-      echo '<a id="paiement" href="payment.php?id_user='. $id .'">Payer le panier</a>';
+      echo '<a id="paiement" href="paiement.php?id_user='. $id .'">Payer le panier</a>';
     }
     else {
         echo '<h3>Le panier est vide</h3>';
