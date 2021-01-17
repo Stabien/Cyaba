@@ -11,11 +11,9 @@
     include('header_admin.php');
     include('bdd_connexion.php');
     ?>
-
     <main>
     <?php
     $req = $bdd->query('SELECT * FROM depot_produits');
-
     while ($data = $req->fetch()) {
       echo '
       <form class="produit" action="admin_submit_depot.php" method="post">

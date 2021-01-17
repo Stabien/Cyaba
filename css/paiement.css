@@ -43,22 +43,22 @@ body {
   font-family: 'Poppins';
   font-weight: 500;
   border-radius: 10px;
-  padding: 8px 10px;
+  padding: 9px 10px;
   font-size: 18px;
   margin: 10px 0;
 }
 
 #form_paiement input[type="submit"] {
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 20px;
   width: 60%;
-  background: #00C7FF;
+  background: green;
   color: white;
   border: none;
-  padding: 8px;
-  font-size: 20px;
+  padding: 7px;
+  font-size: 18px;
   font-family: 'Poppins';
   font-weight: 500;
-  border-radius: 7px;
+  border-radius: 10px;
   cursor: pointer;
 }
