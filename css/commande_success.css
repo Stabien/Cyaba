@@ -1,0 +1,15 @@
+#success_container {
+  width: fit-content;
+  margin: auto;
+  margin-top: 100px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+#success_title {
+  color: #FE7700;
+}
+
+#home_link {
+  font-size: 16px;
+}

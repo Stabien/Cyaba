@@ -21,7 +21,7 @@ if (isset($_POST['Nom_utilisateur'], $_POST['Mot_de_passe'])) {
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/Connexion.css"/>
+    <link rel="stylesheet" href="css/connexion.css"/>
     <title>Connexion</title>
 </head>
 <body>

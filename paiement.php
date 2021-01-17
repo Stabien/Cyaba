@@ -9,22 +9,22 @@
 <?php
 require_once('bdd_connexion.php');
 session_start();
-
 include('check_session.php');
-if (isset($_SESSION['id']) == false or $_SESSION['id'] == null)
-  header('Location: connexion.php');
 
-if (!isset($_GET['id_user']) && !isset($_GET['id_produit']))
-  header('Location: index.php');
+function securityCheck() {
+  if (isset($_SESSION['id']) == false or $_SESSION['id'] == null)
+    header('Location: connexion.php');
 
-if ((isset($_GET['id_user']) && is_numeric($_GET['id_user']) == false)
-    or (isset($_GET['id_produit']) && is_numeric($_GET['id_produit']) == false))
-  header('Location: index.php');
+  if ((!isset($_GET['id_user']) && !isset($_GET['id_produit'])) or
+      isset($_GET['id_user'], $_GET['id_produit']))
+    header('Location: index.php');
 
-if (isset($_POST['submit_commande']) && isset($_GET['id_user'])) {
-  $reqDelete = $bdd->prepare('DELETE FROM panier WHERE id_panier = ?');
-  $reqDelete->execute(array($_GET['id_user']));
+  if ((isset($_GET['id_user']) && is_numeric($_GET['id_user']) == false) or
+      (isset($_GET['id_produit']) && is_numeric($_GET['id_produit']) == false))
+    header('Location: index.php');
 }
+
+securityCheck();
 
 if (isset($_GET['id_user'])) {
   $totalCost = 0;
@@ -41,6 +41,8 @@ if (isset($_GET['id_produit'])) {
 }
 
 if (isset($_POST['submit_commande'])) {
+  securityCheck();
+
   $id_user = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
   $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   $key = "";
@@ -50,12 +52,28 @@ if (isset($_POST['submit_commande'])) {
     $key .= $characters[$random];
   }
 
-  $reqInsertMultiple = $bdd->prepare('INSERT INTO commandes (id_commande, id_user,
+  $reqInsertInfos = $bdd->prepare('INSERT INTO commandes (id_commande, id_user,
   adresse, ville, code_postal, telephone, nom_cb, num_cb, expiration_cb, cvv_cb)
   VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-  $reqInsertMultiple->execute(array($key, $id_user, $_POST['adresse'], $_POST['ville'], $_POST['code_postal'],
+  $reqInsertInfos->execute(array($key, $id_user, $_POST['adresse'], $_POST['ville'], $_POST['code_postal'],
   $_POST['telephone'], $_POST['nom_cb'], $_POST['num_cb'], $_POST['expiration_cb'], $_POST['cvv_cb']));
+
+  if (isset($_GET['id_user'])) {
+    $reqPanier = $bdd->query('SELECT id_produit FROM panier WHERE id_panier = ' . $id_user . '');
+
+    while($dataPanier = $reqPanier->fetch()) {
+      $reqInsertProduits = $bdd->prepare('INSERT INTO commande_produits (id_commande, id_produit) VALUES(?, ?)');
+      $reqInsertProduits->execute(array($key, $dataPanier[0]));
+    }
+    $reqDelete = $bdd->prepare('DELETE FROM panier WHERE id_panier = ?');
+    $reqDelete->execute(array($_GET['id_user']));
+  }
+  if (isset($_GET['id_produit'])) {
+    $reqInsertSingle = $bdd->prepare('INSERT INTO commande_produits (id_commande, id_produit) VALUES(?, ?)');
+    $reqInsertSingle->execute(array($key, $_GET['id_produit']));
+  }
+  header('Location: commande_success.php');
 }
 ?>
   <form id="form_paiement" action="" autocomplete="on" method="POST">
@@ -67,7 +85,7 @@ if (isset($_POST['submit_commande'])) {
     <label>Code postal</label>
     <input type="text" name="code_postal" class="resizedTxtbox" placeholder="Ex: 75000" required>
     <label>Téléphone</label>
-    <input type="text" minlength="10" name="telephone" required placeholder="Ex: 0612345678" >
+    <input type="text" maxlength="12" name="telephone" pattern="(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})" required placeholder="Ex: 0612345678" >
     <h1>Paiement</h1>
     <label>Nom du propriétaire</label>
     <input type="text" name="nom_cb" minlength="2" placeholder="Ex: Jean Dupont" pattern="[A-Za-z].{4,}" required>

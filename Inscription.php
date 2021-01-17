@@ -15,10 +15,9 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/Inscription.css"/>
+    <link rel="stylesheet" href="css/inscription.css"/>
     <title>Inscription</title>
 </head>
-
 <body>
 	<?php include('check_session.php'); ?>
     <form action="" method="post" onsubmit="return check_user_infos()">
