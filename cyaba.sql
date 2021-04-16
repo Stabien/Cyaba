@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 15 déc. 2020 à 14:12
+-- Généré le :  jeu. 15 avr. 2021 à 17:53
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -34,14 +34,75 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `admins`
 --
 
 INSERT INTO `admins` (`ID`, `username`, `password`) VALUES
-(1, 'stabien', 'stabien');
+(1, 'stabien', 'stabien'),
+(2, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commandes`
+--
+
+DROP TABLE IF EXISTS `commandes`;
+CREATE TABLE IF NOT EXISTS `commandes` (
+  `id_commande` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
+  `ville` varchar(255) NOT NULL,
+  `code_postal` varchar(50) NOT NULL,
+  `telephone` varchar(15) NOT NULL,
+  `nom_cb` varchar(255) NOT NULL,
+  `num_cb` varchar(16) NOT NULL,
+  `expiration_cb` varchar(10) NOT NULL,
+  `cvv_cb` varchar(3) NOT NULL,
+  PRIMARY KEY (`id_commande`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`id_commande`, `id_user`, `adresse`, `ville`, `code_postal`, `telephone`, `nom_cb`, `num_cb`, `expiration_cb`, `cvv_cb`) VALUES
+('Yz5bNkcBcyHhoNS', 12, '10 avenue de meudon', 'Paris ', '75000', '0612345678', 'Jean dupont', '1234567898765432', '01/02', '123'),
+('aODgoJuH7QUIGqG', 12, '10 av de meudon', 'Paris', '75000', '0612345665', 'Jean dupont', '1234567898765432', '01/02', '123'),
+('kqVwgEeI7uAbuVM', 12, '10 av meudon', 'Paris', '75000', '0760753274', 'Jean dupont', '0213198237981739', '01/02', '123'),
+('agSg9KSCyq5R1X9', 12, '10 av meudon', 'Paris', '75000', '2348339289', 'Jean dupont', '0213198237981739', '01/02', '123'),
+('hVgmVYDnTsE1kta', 12, 'iezfuhuihz', 'izefufhuiez', '75000', '0674328738', 'ZEIHEUHFZI', '8237489327539857', '01/20', '123'),
+('FZ1Pl8pPdxvuuOr', 29, '10 avenue de meudon', 'paris', '75007', '0612345678', 'Jean Dupont', '1111222233334444', '09/21', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commande_produits`
+--
+
+DROP TABLE IF EXISTS `commande_produits`;
+CREATE TABLE IF NOT EXISTS `commande_produits` (
+  `id_commande` varchar(255) NOT NULL,
+  `id_produit` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `commande_produits`
+--
+
+INSERT INTO `commande_produits` (`id_commande`, `id_produit`) VALUES
+('Yz5bNkcBcyHhoNS', 60),
+('aODgoJuH7QUIGqG', 60),
+('agSg9KSCyq5R1X9', 12),
+('kqVwgEeI7uAbuVM', 12),
+('hVgmVYDnTsE1kta', 60),
+('FZ1Pl8pPdxvuuOr', 60),
+('FZ1Pl8pPdxvuuOr', 4),
+('FZ1Pl8pPdxvuuOr', 35),
+('FZ1Pl8pPdxvuuOr', 60);
 
 -- --------------------------------------------------------
 
@@ -62,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `depot_produits` (
   `images_2` varchar(255) NOT NULL,
   `images_3` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `depot_produits`
@@ -74,50 +135,24 @@ INSERT INTO `depot_produits` (`ID`, `nom`, `prix`, `rayon`, `categorie`, `attrib
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meilleures_ventes`
---
-
-DROP TABLE IF EXISTS `meilleures_ventes`;
-CREATE TABLE IF NOT EXISTS `meilleures_ventes` (
-  `id_produit` int(11) NOT NULL,
-  `nb_vente` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `membres`
---
-
-DROP TABLE IF EXISTS `membres`;
-CREATE TABLE IF NOT EXISTS `membres` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `panier` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `panier`
 --
 
 DROP TABLE IF EXISTS `panier`;
 CREATE TABLE IF NOT EXISTS `panier` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_panier` int(11) NOT NULL,
   `id_produit` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `panier`
 --
 
-INSERT INTO `panier` (`id`, `id_panier`, `id_produit`) VALUES
-(33, 12, 35);
+INSERT INTO `panier` (`id_panier`, `id_produit`, `id`) VALUES
+(28, 60, 41),
+(28, 60, 40);
 
 -- --------------------------------------------------------
 
@@ -226,18 +261,6 @@ INSERT INTO `produits` (`id`, `nom`, `prix`, `rayon`, `categorie`, `attribut`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `promotions`
---
-
-DROP TABLE IF EXISTS `promotions`;
-CREATE TABLE IF NOT EXISTS `promotions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `users`
 --
 
@@ -250,30 +273,34 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Mot_de_passe` varchar(50) NOT NULL,
   `Nom_utilisateur` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`ID`, `Nom`, `Prenom`, `Mail`, `Mot_de_passe`, `Nom_utilisateur`) VALUES
-(1, 'Mongrenier', 'Cyril', 'cyril.mongrenier@gmail.com', 'azerty', 'Birdinatra'),
-(10, 'Mongrenier', 'Kila', 'teste23@gmail.com', 'azerty', 'Aphe'),
-(11, 'gros', 'Romain', 'hkbbi@gmail.com', 'KuQWWk2htwgMXL5', 'zef'),
-(12, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabien'),
-(13, 'ababababa', 'ababababab', 'bastie@stab.fr', 'aaaaaa', 'ababababa'),
-(14, 'stabien', 'stabien', 'bastien.piedallu@gmail.com', 'aaaaaa', 'testeeee'),
-(15, 'aaaa', 'AAAAA', 'aaaa', 'AAAAA', 'AAAAA'),
-(16, 'stabiern', 'stijza', 'bastien.stab@stab.fr', 'bastien', 'zdiadu'),
-(17, 'bastiern', 'stzuhz', 'baaqstien.pied@sfr.fr', 'bastien', 'basoijef'),
-(18, 'bastien', 'bastien', 'dzuid@zeieubf.fr', 'bastien', 'bastiedzo'),
-(19, 'bastien', 'bastien', 'dizuhd@zfiefu.fr', 'bastien', 'bzoiajdo'),
-(20, 'bastien', 'bastien', 'ddiodjei@feufn.fr', 'bastien', 'sjeofi'),
-(21, 'bastien', 'bastien', 'bastien@bastien.lapin', 'bastien', 'bastien'),
-(22, 'bastien', 'bastien', 'uzaahid@dzou.fr', 'bastien', 'stazbien'),
-(23, 'bastienazdoi', 'ODZUFOD', 'ozdeif@zen.fr', 'bastien', 'zaiudiu'),
-(24, 'yuuyft', 'uyfuyfut', 'uyfy@yfu.fr', 'aiuzazduh', 'uyfuyf'),
-(25, 'iizefy', 'FUHF', 'ifuzehf@zieu.fr', 'bastien', 'ZEFHFU');
+(1, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(10, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(11, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(12, 'iuhuihuihusefr', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabien'),
+(13, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(14, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(15, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(16, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(17, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(18, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(19, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(20, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(21, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(22, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(23, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(24, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(25, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(26, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(27, 'Piedallu', 'Bastien', 'bastien.piedallu@sfr.fr', 'stabien', 'Stabieniuhi'),
+(28, 'Piedallu', 'Bastien', 'bastien.piedallu@test.fr', 'Stabien26', 'Stabien2000'),
+(29, 'Piedallu', 'Bastien', 'bastien.piedallu@piedallu.fr', 'Stabien', 'Stabien2300');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

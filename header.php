@@ -44,8 +44,8 @@
 					<li><a href="oc_sport.php">Sport</a></li>
 				</ul>
 			</li>
-			<li><a href="#">Nous contacter</a></li>
-			<li><a href="#">A propos</a></li>
+			<li><a href="nous_contacter.php">Nous contacter</a></li>
+			<li><a href="a_propos.php">A propos</a></li>
 		</ul>
 	</nav>
 </header>

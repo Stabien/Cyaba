@@ -45,8 +45,8 @@
 				</ul>
 			</li>
 			<li><a href="deposer_objet.php">Déposer un objet</a></li>
-			<li><a href="#">Nous contacter</a></li>
-			<li><a href="#">A propos</a></li>
+			<li><a href="nous_contacter.php">Nous contacter</a></li>
+			<li><a href="a_propos.php">A propos</a></li>
 			<li><a href="deconnexion.php">Déconnexion</a></li>
 		</ul>
 	</nav>

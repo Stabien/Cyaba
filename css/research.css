@@ -71,6 +71,10 @@ span {
     margin-top: 5px;
 }
 
+#container-produit {
+  margin-top: 20px !important;
+}
+
 #container_position {
     display: flex;
     flex-direction: column;

@@ -26,29 +26,29 @@ if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Ma
             <div id="Encadrer">
                 <div id="Soulignee">
                 <input class="input" name="Nom" type="text" placeholder="Nom" id="para">
-                <p>Please enter a valid name</p>
+                <p>Veuillez saisir un nom valide</p>
                 <input class="input" name="Prenom" type="text" placeholder="Prénom" id="para">
-                <p>Please enter a valid name</p>
+                <p>Veuillez saisir un prénom valide</p>
                 <input class="input" name="Nom_utilisateur" type="text" placeholder="Nom d'utilisateur" id="para">
-                <p>Please enter a valid username</p>
+                <p>Veuillez saisir un nom d'utilisateur valide</p>
                 <?php
 								if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
 									if ($check_username->fetch())
-										echo '<span>This username is already taken</span>';
+										echo "<span>Ce nom d'utilisateur est déjà pris</span>";
 								}
 								?>
                 <input class="input" name="Mail" type="text" placeholder="Email" id="para">
-                <p>Please enter a valid email address</p>
+                <p>Veuillez saisir une adresse email valide</p>
                 <?php
 								if (isset($_POST['Nom'], $_POST['Prenom'], $_POST['Nom_utilisateur'], $_POST['Mail'], $_POST['Mot_de_passe'])) {
 									if ($check_email_address->fetch())
-										echo '<span>This email address is already taken</span>';
+										echo "<span>Cette adresse email est déjà prise</span>";
 									}
 								?>
                 <input class="input" name="Mot_de_passe" type='password' placeholder="Mot de passe" id="para">
-                <p>Please enter a valid password</p>
+                <p>Veuillez saisir un mot de passe valide</p>
                 <input class="input" name="conf_mot_de_passe" type='password' placeholder="Confirmer mot de passe" id="para">
-                <p>Please enter a valid password</p>
+                <p>Veuillez saisir un mot de passe valide</p>
                 </div>
                 <input type='submit' name="Envoie" id="Sub" placeholder="S'inscrire">
                 <a href="Connexion.php" id="con">Déjà inscrit ?</a>

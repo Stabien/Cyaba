@@ -14,7 +14,7 @@ if (isset($_GET['id_produit']) && isset($_SESSION['id']) && $_SESSION['id'] != n
     $id = (int) filter_var($_SESSION['id'], FILTER_SANITIZE_NUMBER_INT);
     $req = $bdd->prepare('INSERT INTO panier (id_panier, id_produit) VALUES (?, ?)');
     $req->execute(array($id, $_GET['id_produit']));
-    header('Location: index.php');
+    header('Location: panier.php');
 }
 else if (isset($_GET['id_produit']) && (!isset($_SESSION['id']) or $_SESSION['id'] == null))
     header('Location: connexion.php');
