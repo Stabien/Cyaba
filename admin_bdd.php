@@ -14,22 +14,23 @@
     <main>
     <?php
     $req = $bdd->query('SELECT * FROM produits');
-
+    $counter = 0;
     while ($data = $req->fetch()) {
+      $strCounter = strval($counter);
       echo '
       <form class="produit" action="admin_submit_bdd.php" onsubmit="return confirmation()" method="post">
         <label>ID : <input type="text" name="id" value="' . $data['id'] . '"></label>
         <label>Nom : <input type="text" name="nom" value="' . $data['nom'] . '"></label>
         <label>Prix : <input type="text" name="prix" value="' . $data['prix'] . '"></label>
         <label>Rayon :
-          <select name="rayon">
+          <select class="select-rayon" id="select-rayon' . $strCounter . '" name="rayon">
             <option value="Audiovisuel">Audiovisuel</option>
             <option value="Informatique">Informatique</option>
             <option value="Objets connectes">Objets connectés</option>
           </select>
         </label>
         <label>Catégorie :
-          <select name="categorie">
+          <select class="select-categorie" id="select-categorie' . $strCounter . '" name="categorie">
             <option value="Photo">Appareil Photo</option>
             <option value="Camera">Camera</option>
             <option value="Enceinte">Enceinte</option>
@@ -53,6 +54,7 @@
         <input type="text" class="hiddenFields categorieValue" value="' . $data['categorie'] . '">
       </form>
       ';
+      $counter++;
     }
     ?>
     </main>
@@ -61,7 +63,6 @@
       let buttonName;
       const confirmation = () => {
         return confirm('Êtes-vous sûr de vouloir ' + buttonName + ' ce produit ?');
-        return choice;
       }
 
       $('select').css('width', parseInt($('input').eq(6).css('width')) + 8.8 + 'px');
@@ -78,6 +79,38 @@
           if ($('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').val() === categorie)
             $('form').eq(i).find('select[name="categorie"] option:eq(' + j + ')').prop('selected', 'selected');
         }
+      }
+
+      for (let j = 0; j < $('.select-rayon').length; j++) {
+        $('#select-rayon' + j).on('change', () => {
+          // Reset display for all options
+          for (let i = 0; i < 8; i++) {
+            $('#select-categorie' + j + ' option:eq(' + i + ')').css('display', 'none');
+          }
+          switch ($('#select-rayon' + j + ' option:selected').val()) {
+            case "Audiovisuel":
+              // Displays only options 1, 2 and 3
+              for (let i = 0; i < 3; i++)
+                $('#select-categorie' + j + ' option:eq(' + i + ')').css('display', 'block');
+              // Change select to the first element of the categorie chosen
+              $('#select-categorie' + j + ' option:eq(0)').prop('selected', 'selected');
+              break;
+            case "Informatique":
+              // Displays only options 4, 5 and 6
+              for (let i = 3; i < 6; i++)
+                $('#select-categorie' + j + ' option:eq(' + i + ')').css('display', 'block');
+              // Change select to the first element of the categorie chosen
+              $('#select-categorie' + j + ' option:eq(3)').prop('selected', 'selected');
+              break;
+            case "Objets connectes":
+              // Displays only options 7 and 8
+              for (let i = 6; i < 8; i++)
+                $('#select-categorie' + j + ' option:eq(' + i + ')').css('display', 'block');
+              // Change select to the first element of the categorie chosen
+              $('#select-categorie' + j + ' option:eq(6)').prop('selected', 'selected');
+              break;
+          }
+        });
       }
     </script>
   </body>
